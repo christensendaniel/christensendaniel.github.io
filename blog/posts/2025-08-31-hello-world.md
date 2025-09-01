@@ -21,7 +21,7 @@ After 7+ years in data engineering, I've accumulated knowledge that I believe ca
 
 ### Disney: Enterprise-Scale Real-Time Analytics
 
-At Disney, I've been focused on building systems that can handle massive scale while maintaining sub-2-minute latency. Some highlights:
+At Disney, I've been focused on building systems that can handle scale. Some highlights:
 
 - **Performance Optimization**: Improved event-based data query performance by 30% through advanced Snowflake optimization
 - **Cost Management**: Implemented comprehensive Snowflake cost reduction strategies
@@ -41,7 +41,7 @@ At Disney, I've been focused on building systems that can handle massive scale w
 I'm planning to cover topics like:
 
 1. **Building Sub-2-Minute Data Pipelines** - The architecture behind real-time analytics at scale
-2. **Snowflake Cost Optimization** - How we reduced compute costs by 30% without sacrificing performance
+2. **Snowflake Cost Optimization** - How to reduced compute costs by 30% and increasing performance
 3. **Apache Flink for Data Engineers** - Practical patterns for stream processing
 4. **API-First Data Platforms** - Lessons from building systems that handle 2M+ requests/month
 5. **Data Quality at Scale** - Monitoring and validation strategies for enterprise data
@@ -54,4 +54,4 @@ I'm always interested in discussing data engineering challenges and solutions. F
 - [GitHub](https://github.com/christensendaniel)
 - [PyPI Package: paged-list](https://pypi.org/project/paged-list/)
 
-Looking forward to sharing more insights from the trenches of enterprise data engineering!
+Looking forward to sharing more insights of enterprise data engineering!
