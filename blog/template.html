@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Daniel B. Christensen</title>
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/blog.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">← Home</a></li>
+                <li><a href="index.html" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <header class="post-header">
+            <div class="container">
+                <h1 class="post-title">{{title}}</h1>
+                <div class="post-meta">
+                    <span class="post-author">By {{author}}</span>
+                    <span class="post-date">{{date}}</span>
+                </div>
+                <div class="post-tags">{{tags}}</div>
+            </div>
+        </header>
+
+        <main class="post-content">
+            <div class="container">
+                <div class="content-wrapper">
+                    {{content}}
+                </div>
+            </div>
+        </main>
+    </article>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Daniel B. Christensen | Senior Data Engineer</p>
+            <p class="footer-links">
+                <a href="https://christensendaniel.github.io">christensendaniel.github.io</a> • 
+                <a href="https://linkedin.com/in/dbchristensen">LinkedIn</a> • 
+                <a href="https://github.com/christensendaniel">GitHub</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
