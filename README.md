@@ -85,83 +85,55 @@ DataDog, CloudWatch | Custom alerting and observability dashboards.
 ## Projects & Open Source
 
 ### [paged-list](https://pypi.org/project/paged-list/)
+
 Open-source Python package for static pagination and listing functionality. Available on PyPI.
 
-### [C101 Script](projects/c101_script.html)
-[TODO: Add description of this project]
+### Real-Time Analytics Pipeline
 
-### Data Pipeline Templates
-[TODO: Add link to GitHub repo with pipeline examples]
+Enterprise streaming architecture built at Disney with sub-2-minute latency using Apache Flink and Snowflake integration. Achieved 30% query performance improvement processing millions of events daily.
 
-### [Blog](blog/)
-Technical insights and data engineering best practices - [Latest: Hello World](blog/2024-12-20-hello-world.md)
+### Multi-Source Data Platform
+
+FastAPI-based integration platform handling 2M+ API requests per month. Integrates Facebook, Google Ads, and AdRoll APIs, saving 200+ manual hours monthly through automation.
+
+### Enterprise Data Sync
+
+Robust ETL pipeline for retail systems syncing 5M+ rows monthly between MS Dynamics and POS systems with 99.9% reliability.
+
+### [Technical Blog](blog/)
+
+Insights on data engineering best practices, performance optimization techniques, and cloud cost reduction strategies.
 
 ### Medium
+
 [My Medium Page](https://medium.com/@christensen-danielb)
 
 ---
 
-## Blog System
+## Website Features
 
-The blog uses a static site generator that converts Markdown files to styled HTML.
+This portfolio website showcases:
 
-### Writing Blog Posts
+- **Responsive Design**: Mobile-first approach with breakpoints for all device sizes
+- **Professional Layout**: Clean, modern design with dark/light theme support
+- **Interactive Navigation**: Dual navigation system with horizontal nav and left sidebar with scroll indicators
+- **Project Showcase**: Detailed portfolio sections highlighting real-world data engineering projects
+- **Technical Skills**: Comprehensive overview of technologies, frameworks, and platforms
+- **Blog Integration**: Technical blog with data engineering insights and best practices
+- **SEO Optimized**: Proper meta tags, semantic HTML, and search engine optimization
 
-1. Create a new Markdown file in `blog/posts/` with the format `YYYY-MM-DD-title.md`
-2. Add frontmatter at the top of the file:
+### Technology Stack
 
-```yaml
----
-title: "Your Post Title"
-date: 2024-12-20
-description: "Brief description of your post"
-tags: ["tag1", "tag2"]
-author: "Daniel B. Christensen"
----
-```
-
-3. Write your content in Markdown below the frontmatter
-
-### Building the Blog
-
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Run the build script:
-```bash
-python build-blog.py
-```
-
-This will:
-- Convert all Markdown files in `blog/posts/` to HTML
-- Generate individual blog post pages
-- Update the blog index page
-- Apply consistent styling matching the main site
-
-### Features
-
-- **Markdown Support**: Write posts in Markdown with full syntax support
-- **Code Highlighting**: Automatic syntax highlighting for code blocks
-- **Responsive Design**: Matches the professional styling of the main site
-- **SEO Friendly**: Proper meta tags and semantic HTML
-- **Fast Loading**: Static HTML pages with minimal JavaScript
-
-### Directory Structure
-
-```
-blog/
-├── posts/           # Markdown source files
-├── template.html    # Blog post template
-├── index-template.html  # Blog index template
-├── index.html      # Generated blog index (don't edit)
-└── *.html          # Generated blog posts (don't edit)
-```
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: CSS Grid, Flexbox, CSS Variables for theming
+- **Responsive**: Mobile-first responsive design
+- **Performance**: Optimized loading with minimal dependencies
+- **Hosting**: GitHub Pages with custom domain support
 
 ## Development
 
 To preview the site locally:
+
 ```bash
 python -m http.server 8000
 ```
@@ -198,6 +170,7 @@ University of Utah, May 2017
 ## Get In Touch
 
 I'm available for consulting engagements through [SAVVBI](https://savvbi.com) or direct contract opportunities. Whether you need help with:
+
 - Building scalable data pipelines
 - Optimizing existing data infrastructure
 - Implementing real-time data processing
