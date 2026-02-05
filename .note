@@ -1,0 +1,267 @@
+import os
+import sys
+import logging
+from pyflink.datastream import StreamExecutionEnvironment, RuntimeExecutionMode
+from pyflink.table import StreamTableEnvironment, EnvironmentSettings
+from pyflink.common import Row
+
+# Import local modules
+from config import AppConfig
+from sinks import Neo4jCustomerOrderSink, Neo4jOrderItemSink
+
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+def create_source_tables(table_env, config):
+    """
+    Create source tables with JDBC connector for batch mode.
+    In batch mode, the tables will be read completely once.
+    """
+    logger.info("Creating source tables with JDBC connector for batch mode")
+    jdbc_url = config.jdbc_url
+    jdbc_username = config.jdbc_username
+    jdbc_password = config.jdbc_password
+
+    # Customers
+    # Note: scan.partition.num is set to 1 to match the env.set_parallelism(1) setting
+    # For higher parallelism, increase both values accordingly
+    table_env.execute_sql(f"""
+        CREATE TABLE customers (
+          customer_id BIGINT,
+          name STRING,
+          email STRING,
+          address STRING,
+          city STRING,
+          country STRING,
+          PRIMARY KEY (customer_id) NOT ENFORCED
+        ) WITH (
+          'connector' = 'jdbc',
+          'url' = '{jdbc_url}',
+          'table-name' = 'customers',
+          'username' = '{jdbc_username}',
+          'password' = '{jdbc_password}'
+        )
+    """)
+    logger.info("Created customers source table")
+
+    # Orders
+    table_env.execute_sql(f"""
+        CREATE TABLE orders (
+          order_id BIGINT,
+          customer_id BIGINT,
+          order_date TIMESTAMP(3),
+          total_amount DECIMAL(10, 2),
+          status STRING,
+          PRIMARY KEY (order_id) NOT ENFORCED
+        ) WITH (
+          'connector' = 'jdbc',
+          'url' = '{jdbc_url}',
+          'table-name' = 'orders',
+          'username' = '{jdbc_username}',
+          'password' = '{jdbc_password}'
+        )
+    """)
+    logger.info("Created orders source table")
+
+    # OrderItems
+    table_env.execute_sql(f"""
+        CREATE TABLE order_items (
+          order_item_id BIGINT,
+          order_id BIGINT,
+          product_name STRING,
+          quantity INT,
+          unit_price DECIMAL(10, 2),
+          subtotal DECIMAL(10, 2),
+          PRIMARY KEY (order_item_id) NOT ENFORCED
+        ) WITH (
+          'connector' = 'jdbc',
+          'url' = '{jdbc_url}',
+          'table-name' = 'order_items',
+          'username' = '{jdbc_username}',
+          'password' = '{jdbc_password}'
+        )
+    """)
+    logger.info("Created order_items source table")
+
+def process_customer_orders(env, table_env, config):
+    """
+    Process Customer-Order relationships in batch mode.
+    Reads all data, joins it, and writes to Neo4j.
+    """
+    logger.info("Processing Customer-Order relationships in batch mode")
+    
+    # SQL query to join
+    query = """
+        SELECT 
+          c.customer_id,
+          c.name as customer_name,
+          c.email,
+          c.address,
+          c.city,
+          c.country,
+          o.order_id,
+          o.order_date,
+          o.total_amount,
+          o.status 
+        FROM customers c 
+        INNER JOIN orders o ON c.customer_id = o.customer_id
+    """
+    
+    table = table_env.sql_query(query)
+    
+    # Convert to DataStream (even in batch mode, we use StreamTableEnvironment)
+    ds = table_env.to_data_stream(table)
+    
+    def map_to_dict(row):
+        """Map Row to dictionary for Neo4j sink"""
+        return {
+            "customerId": row['customer_id'],
+            "customerName": row['customer_name'],
+            "email": row['email'],
+            "address": row['address'],
+            "city": row['city'],
+            "country": row['country'],
+            "orderId": row['order_id'],
+            "orderDate": row['order_date'],
+            "totalAmount": row['total_amount'],
+            "status": row['status']
+        }
+
+    mapped_ds = ds.map(map_to_dict)
+    
+    # Process with Neo4j Sink
+    processed_ds = mapped_ds.process(Neo4jCustomerOrderSink(
+        config.neo4j_uri,
+        config.neo4j_username,
+        config.neo4j_password
+    )).name("Neo4j Customer-Order Sink (Batch)")
+    
+    # Add print sink to satisfy Flink's requirement
+    processed_ds.print()
+    
+    logger.info("Configured Customer-Order batch processing pipeline")
+
+def process_order_items(env, table_env, config):
+    """
+    Process Order-OrderItem relationships in batch mode.
+    Reads all data, joins it, and writes to Neo4j.
+    """
+    logger.info("Processing Order-OrderItem relationships in batch mode")
+    
+    query = """
+        SELECT 
+          o.order_id,
+          o.customer_id,
+          o.total_amount as order_total_amount,
+          o.status as order_status,
+          oi.order_item_id,
+          oi.product_name,
+          oi.quantity,
+          oi.unit_price,
+          oi.subtotal 
+        FROM orders o 
+        INNER JOIN order_items oi ON o.order_id = oi.order_id
+    """
+    
+    table = table_env.sql_query(query)
+    ds = table_env.to_data_stream(table)
+
+    def map_to_dict(row):
+        """Map Row to dictionary for Neo4j sink"""
+        return {
+            "orderId": row['order_id'],
+            "customerId": row['customer_id'],
+            "orderTotalAmount": row['order_total_amount'],
+            "orderStatus": row['order_status'],
+            "orderItemId": row['order_item_id'],
+            "productName": row['product_name'],
+            "quantity": row['quantity'],
+            "unitPrice": row['unit_price'],
+            "subtotal": row['subtotal']
+        }
+        
+    mapped_ds = ds.map(map_to_dict)
+    
+    processed_ds = mapped_ds.process(Neo4jOrderItemSink(
+        config.neo4j_uri,
+        config.neo4j_username,
+        config.neo4j_password
+    )).name("Neo4j Order-OrderItem Sink (Batch)")
+
+    processed_ds.print()
+
+    logger.info("Configured Order-OrderItem batch processing pipeline")
+
+def main():
+    """
+    Main entry point for batch mode Flink to Neo4j job.
+    
+    This job runs in batch mode, processing all existing data once and then terminating.
+    Unlike the streaming version, this reads the complete dataset from the source database,
+    processes it through the pipeline, and writes to Neo4j before completing.
+    
+    Note: Even though we're in batch mode, we use StreamTableEnvironment for table operations
+    as specified in the requirements. The batch behavior is controlled by the execution mode
+    configuration.
+    """
+    # Setup paths
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    resources_dir = os.path.join(current_dir, '..', 'resources')
+    target_dir = os.path.join(current_dir, '..', '..', '..', 'target')
+    
+    config_file = os.path.join(resources_dir, 'application.properties')
+    # Find shaded jar
+    jar_name = 'flink-to-neo4j-1.0-SNAPSHOT.jar'
+    jar_path = os.path.join(target_dir, jar_name)
+    
+    if not os.path.exists(jar_path):
+        logger.error(f"JAR file not found at {jar_path}. Run 'mvn package' first.")
+        sys.exit(1)
+
+    # Load config
+    config = AppConfig(config_file)
+
+    # Setup Environment with BATCH mode
+    logger.info("Initializing Flink environment in BATCH mode")
+    try:
+        logger.info("Getting execution environment...")
+        env = StreamExecutionEnvironment.get_execution_environment()
+        logger.info("Got execution environment")
+    except Exception as e:
+        logger.error(f"Error getting execution environment: {e}", exc_info=True)
+        raise
+    # Parallelism is set to 1 for simplicity and to avoid network buffer issues in local execution
+    # For production deployments with larger datasets, increase parallelism along with scan.partition.num
+    env.set_parallelism(1)
+    
+    # Configure for batch execution
+    # In batch mode, the job will process all data and then terminate
+    env.set_runtime_mode(RuntimeExecutionMode.BATCH)
+    
+    # Add JARs - Critical for JDBC connector
+    jar_url = f"file:///{jar_path.replace(os.sep, '/')}"
+    logger.info(f"Adding JAR: {jar_url}")
+    env.add_jars(jar_url)
+    
+    # Create StreamTableEnvironment (as specified - even in batch mode we use stream table env)
+    t_env = StreamTableEnvironment.create(env)
+    
+    # Create Tables
+    create_source_tables(t_env, config)
+    
+    # Process in batch mode
+    process_customer_orders(env, t_env, config)
+    process_order_items(env, t_env, config)
+    
+    # Execute - in batch mode this will process all data and terminate
+    logger.info("Executing PyFlink Batch Job...")
+    env.execute("PyFlink to Neo4j Pipeline (Batch Mode)")
+    logger.info("Batch job completed successfully.")
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        logger.error(f"Fatal error: {e}", exc_info=True)
+        sys.exit(1)
