@@ -9,7 +9,7 @@ function getGitHash() {
   try {
     return execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
   } catch (error) {
-    console.warn('Warning: Could not get git hash:', error.message);
+    console.warn('Warning: Could not execute git command:', error.message);
     return process.env.GIT_COMMIT_HASH || 'unknown';
   }
 }

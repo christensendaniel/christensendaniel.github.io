@@ -29,9 +29,10 @@ function getGitInfo() {
     };
   } catch (error) {
     console.warn('Warning: Could not retrieve git information:', error.message);
+    const fallbackHash = process.env.GIT_COMMIT_HASH || 'unknown';
     return {
-      hash: process.env.GIT_COMMIT_HASH || 'unknown',
-      shortHash: process.env.GIT_COMMIT_HASH?.substring(0, 7) || 'unknown',
+      hash: fallbackHash,
+      shortHash: fallbackHash !== 'unknown' ? fallbackHash.substring(0, 7) : 'unknown',
       branch: process.env.GIT_BRANCH || 'unknown'
     };
   }
