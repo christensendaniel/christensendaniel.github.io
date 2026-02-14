@@ -7,6 +7,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
   >
     <nav
       class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      data-testid="main-navigation"
     >
       <div
         class="container mx-auto px-4"
@@ -19,45 +20,53 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-testid="nav-logo"
               href="/"
             >
               Daniel Christensen
             </a>
             <div
               class="hidden md:flex items-center gap-1"
+              data-testid="nav-links"
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-about"
                 href="/#about"
               >
                 About
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-expertise"
                 href="/#expertise"
               >
                 Expertise
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-experience"
                 href="/#experience"
               >
                 Experience
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-projects"
                 href="/#projects"
               >
                 Projects
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-blog"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-contact"
                 href="/#contact"
               >
                 Contact
@@ -67,10 +76,12 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
           <button
             aria-label="Toggle theme"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
+            data-testid="theme-toggle"
           >
             <svg
               aria-hidden="true"
               class="lucide lucide-moon h-5 w-5"
+              data-testid="moon-icon"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -213,6 +224,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
     </main>
     <footer
       class="border-t bg-background"
+      data-testid="site-footer"
     >
       <div
         class="container mx-auto px-4 py-8"
@@ -222,11 +234,13 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
         >
           <p
             class="text-sm text-muted-foreground"
+            data-testid="copyright-text"
           >
             © 2025 Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
+            data-testid="github-link"
             href="https://github.com/christensendaniel/christensendaniel.github.io"
           >
             View on GitHub
@@ -245,6 +259,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
   >
     <nav
       class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      data-testid="main-navigation"
     >
       <div
         class="container mx-auto px-4"
@@ -257,45 +272,53 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-testid="nav-logo"
               href="/"
             >
               Daniel Christensen
             </a>
             <div
               class="hidden md:flex items-center gap-1"
+              data-testid="nav-links"
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-about"
                 href="/#about"
               >
                 About
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-expertise"
                 href="/#expertise"
               >
                 Expertise
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-experience"
                 href="/#experience"
               >
                 Experience
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-projects"
                 href="/#projects"
               >
                 Projects
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-blog"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-contact"
                 href="/#contact"
               >
                 Contact
@@ -305,10 +328,12 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
           <button
             aria-label="Toggle theme"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
+            data-testid="theme-toggle"
           >
             <svg
               aria-hidden="true"
               class="lucide lucide-moon h-5 w-5"
+              data-testid="moon-icon"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -2135,6 +2160,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
     </main>
     <footer
       class="border-t bg-background"
+      data-testid="site-footer"
     >
       <div
         class="container mx-auto px-4 py-8"
@@ -2144,11 +2170,13 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
         >
           <p
             class="text-sm text-muted-foreground"
+            data-testid="copyright-text"
           >
             © 2025 Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
+            data-testid="github-link"
             href="https://github.com/christensendaniel/christensendaniel.github.io"
           >
             View on GitHub
@@ -2693,6 +2721,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
     </main>
     <footer
       class="border-t bg-background"
+      data-testid="site-footer"
     >
       <div
         class="container mx-auto px-4 py-8"
@@ -2702,11 +2731,13 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
         >
           <p
             class="text-sm text-muted-foreground"
+            data-testid="copyright-text"
           >
             © 2025 Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
+            data-testid="github-link"
             href="https://github.com/christensendaniel/christensendaniel.github.io"
           >
             View on GitHub
@@ -2725,6 +2756,7 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
   >
     <nav
       class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      data-testid="main-navigation"
     >
       <div
         class="container mx-auto px-4"
@@ -2737,45 +2769,53 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-testid="nav-logo"
               href="/"
             >
               Daniel Christensen
             </a>
             <div
               class="hidden md:flex items-center gap-1"
+              data-testid="nav-links"
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-about"
                 href="/#about"
               >
                 About
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-expertise"
                 href="/#expertise"
               >
                 Expertise
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-experience"
                 href="/#experience"
               >
                 Experience
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-projects"
                 href="/#projects"
               >
                 Projects
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-blog"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-contact"
                 href="/#contact"
               >
                 Contact
@@ -2785,10 +2825,12 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
           <button
             aria-label="Toggle theme"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
+            data-testid="theme-toggle"
           >
             <svg
               aria-hidden="true"
               class="lucide lucide-moon h-5 w-5"
+              data-testid="moon-icon"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -3386,6 +3428,7 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
     </main>
     <footer
       class="border-t bg-background"
+      data-testid="site-footer"
     >
       <div
         class="container mx-auto px-4 py-8"
@@ -3395,11 +3438,13 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
         >
           <p
             class="text-sm text-muted-foreground"
+            data-testid="copyright-text"
           >
             © 2025 Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
+            data-testid="github-link"
             href="https://github.com/christensendaniel/christensendaniel.github.io"
           >
             View on GitHub
