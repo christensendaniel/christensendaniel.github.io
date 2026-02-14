@@ -114,35 +114,75 @@ Insights on data engineering best practices, performance optimization techniques
 
 This portfolio website showcases:
 
+- **React Architecture**: Built with React 18 for modern, component-based development
 - **Responsive Design**: Mobile-first approach with breakpoints for all device sizes
 - **Professional Layout**: Clean, modern design with dark/light theme support
-- **Interactive Navigation**: Dual navigation system with horizontal nav and left sidebar with scroll indicators
+- **Interactive Navigation**: Hash-based routing for seamless client-side navigation
 - **Project Showcase**: Detailed portfolio sections highlighting real-world data engineering projects
 - **Technical Skills**: Comprehensive overview of technologies, frameworks, and platforms
 - **Blog Integration**: Technical blog with data engineering insights and best practices
 - **SEO Optimized**: Proper meta tags, semantic HTML, and search engine optimization
+- **Comprehensive Testing**: Full test coverage with Jest and React Testing Library
+- **CI/CD Pipeline**: Automated testing and deployment with GitHub Actions
 
 ### Technology Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Frontend**: React 18.3.x with Vite build tool
+- **Routing**: React Router DOM 6.x with hash-based routing for GitHub Pages
 - **Styling**: CSS Grid, Flexbox, CSS Variables for theming
+- **Testing**: Jest 29.x + React Testing Library for comprehensive test coverage
 - **Responsive**: Mobile-first responsive design
-- **Performance**: Optimized loading with minimal dependencies
+- **Performance**: Optimized production builds with code splitting
 - **Hosting**: GitHub Pages with custom domain support
+- **CI/CD**: GitHub Actions for automated testing and deployment
 
 ## Development
 
 To preview the site locally:
 
 ```bash
-python -m http.server 8000
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-Then visit `http://localhost:8000`
+Then visit the URL shown in the terminal (typically `http://localhost:5173`)
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Building for Production
+
+```bash
+# Create production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
 
 ## Deployment
 
-The site is hosted on GitHub Pages. Simply push to the main branch to deploy.
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch:
+
+1. GitHub Actions runs all tests
+2. If tests pass, the app is built
+3. The build output is deployed to the `gh-pages` branch
+4. GitHub Pages serves the site from the `gh-pages` branch
+
+The deployment workflow is defined in `.github/workflows/ci-cd.yml`.
 
 ---
 
