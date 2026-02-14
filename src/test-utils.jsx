@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom'
  * 
  * @param {React.ReactElement} ui - Component to render
  * @param {object} options - Additional render options
- * @returns {object} - Render result from @testing-library/react
+ * @returns {RenderResult} - Render result from @testing-library/react including query methods and utilities
  */
 export function renderWithRouter(ui, { route = '/', ...renderOptions } = {}) {
   window.history.pushState({}, 'Test page', route)

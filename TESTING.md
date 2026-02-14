@@ -150,9 +150,9 @@ await waitFor(() => {
 
 ## CI/CD Integration
 
-Tests run automatically on:
-- Every push to `main`
-- Every pull request
+Tests run automatically in GitHub Actions on:
+- Every push to the `main` branch
+- Every pull request to the `main` branch
 
 The CI pipeline:
 1. Runs all tests with coverage

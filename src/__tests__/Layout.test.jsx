@@ -80,11 +80,14 @@ describe('Layout component', () => {
     // Clear the initial setItem call
     setItemSpy.mockClear()
     
-    // Click the toggle
+    // Click the toggle to switch to dark mode
     fireEvent.click(themeToggle)
-    
-    // Verify setItem was called with dark theme
     expect(setItemSpy).toHaveBeenCalledWith('theme', 'dark')
+    
+    // Click again to switch back to light mode
+    setItemSpy.mockClear()
+    fireEvent.click(themeToggle)
+    expect(setItemSpy).toHaveBeenCalledWith('theme', 'light')
   })
 
   test('loads theme from localStorage on mount', () => {
