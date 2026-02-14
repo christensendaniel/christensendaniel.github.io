@@ -1,0 +1,45 @@
+import React from 'react'
+import { render } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+import Home from '../pages/Home'
+import Skills from '../pages/Skills'
+import Blog from '../pages/Blog'
+import Portfolio from '../pages/Portfolio'
+
+describe('Snapshot Tests', () => {
+  test('Home page snapshot', () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Skills page snapshot', () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Skills />
+      </BrowserRouter>
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Blog page snapshot', () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Blog />
+      </BrowserRouter>
+    )
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Portfolio page snapshot', () => {
+    const { container } = render(
+      <BrowserRouter>
+        <Portfolio />
+      </BrowserRouter>
+    )
+    expect(container).toMatchSnapshot()
+  })
+})

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
 import Footer from './Footer'
