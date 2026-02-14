@@ -11,8 +11,13 @@ function Layout({ children, showNavigation = true }) {
   })
 
   useEffect(() => {
-    // Save theme preference
+    // Save theme preference and apply to document
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }, [isDarkMode])
 
   const handleThemeToggle = () => {
@@ -20,15 +25,15 @@ function Layout({ children, showNavigation = true }) {
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       {showNavigation && (
         <Navigation isDarkMode={isDarkMode} onThemeToggle={handleThemeToggle} />
       )}
-      <main>
+      <main className="flex-1">
         {children}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

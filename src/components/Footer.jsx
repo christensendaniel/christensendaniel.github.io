@@ -2,17 +2,19 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <p className="footer-text">
-          © 2025 Daniel Christensen | {' '}
+    <footer className="border-t bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            © 2025 Daniel Christensen
+          </p>
           <a 
             href="https://github.com/christensendaniel/christensendaniel.github.io" 
-            className="footer-link"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             View on GitHub
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   )

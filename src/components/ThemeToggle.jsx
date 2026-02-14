@@ -1,21 +1,21 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { Moon, Sun } from 'lucide-react'
+import { Button } from './ui/button'
 
 function ThemeToggle({ isDarkMode, onToggle }) {
-  useEffect(() => {
-    // Set the theme attribute on the document element
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light')
-  }, [isDarkMode])
-
   return (
-    <button 
-      className="theme-toggle" 
-      id="theme-toggle" 
-      aria-label="Toggle dark mode"
+    <Button 
+      variant="ghost" 
+      size="icon"
       onClick={onToggle}
+      aria-label="Toggle theme"
     >
-      <span className="theme-toggle-icon">{isDarkMode ? '☀️' : '🌙'}</span>
-    </button>
+      {isDarkMode ? (
+        <Sun className="h-5 w-5" />
+      ) : (
+        <Moon className="h-5 w-5" />
+      )}
+    </Button>
   )
 }
 
