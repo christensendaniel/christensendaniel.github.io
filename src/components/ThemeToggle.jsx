@@ -9,11 +9,12 @@ function ThemeToggle({ isDarkMode, onToggle }) {
       size="icon"
       onClick={onToggle}
       aria-label="Toggle theme"
+      data-testid="theme-toggle"
     >
       {isDarkMode ? (
-        <Sun className="h-5 w-5" />
+        <Sun className="h-5 w-5" data-testid="sun-icon" />
       ) : (
-        <Moon className="h-5 w-5" />
+        <Moon className="h-5 w-5" data-testid="moon-icon" />
       )}
     </Button>
   )

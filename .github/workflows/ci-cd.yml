@@ -35,11 +35,34 @@ jobs:
           npm ci
           echo "✅ Dependencies installed"
       
-      - name: Run tests
+      - name: Run tests with coverage
         run: |
-          echo "🧪 Running Jest tests..."
-          npm test
+          echo "🧪 Running Jest tests with coverage..."
+          npm test -- --coverage --coverageReporters=text --coverageReporters=json-summary
           echo "✅ Tests completed"
+      
+      - name: Check coverage thresholds
+        run: |
+          echo "📊 Checking coverage thresholds..."
+          npm test -- --coverage --coverageReporters=text
+          echo "✅ Coverage thresholds met"
+      
+      - name: Upload coverage artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+      
+      - name: Display coverage summary
+        if: always()
+        run: |
+          echo "## 🧪 Test Coverage Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat coverage/coverage-summary.json 2>/dev/null || echo "Coverage report not found"
+          echo '```' >> $GITHUB_STEP_SUMMARY
   
   build-and-verify:
     name: Build and Verify

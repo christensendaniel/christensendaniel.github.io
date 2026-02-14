@@ -32,7 +32,19 @@ const buttonVariants = cva(
   }
 )
 
-const Button = React.forwardRef(({ className, variant, size, ...props }, ref) => {
+const Button = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+  const Comp = asChild ? React.Fragment : "button"
+  
+  if (asChild) {
+    // When asChild is true, return the child element with merged className
+    return React.Children.map(props.children, child =>
+      React.cloneElement(child, {
+        className: cn(buttonVariants({ variant, size }), className, child.props.className),
+        ref,
+      })
+    )
+  }
+  
   return (
     <button
       className={cn(buttonVariants({ variant, size, className }))}
