@@ -1,6 +1,9 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import { Button } from '../components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { ArrowLeft } from 'lucide-react'
 
 function BlogPost() {
   const { postId } = useParams()
@@ -70,10 +73,12 @@ function BlogPost() {
   if (!post) {
     return (
       <Layout>
-        <div className="container">
-          <h1>Post Not Found</h1>
-          <p>Sorry, the blog post you're looking for doesn't exist.</p>
-          <Link to="/blog">← Back to Blog</Link>
+        <div className="container mx-auto px-4 py-16 text-center">
+          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+          <p className="text-muted-foreground mb-6">Sorry, the blog post you're looking for doesn't exist.</p>
+          <Button asChild>
+            <Link to="/blog">← Back to Blog</Link>
+          </Button>
         </div>
       </Layout>
     )
@@ -81,27 +86,37 @@ function BlogPost() {
 
   return (
     <Layout>
-      <article className="blog-post">
-        <header className="post-header">
-          <div className="container">
-            <h1 className="post-title">{post.title}</h1>
-            <div className="post-meta">
-              <span className="post-author">By {post.author}</span>
-              <span className="post-date">{post.date}</span>
-            </div>
-            <div className="post-tags">
-              {post.tags.map(tag => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
-          </div>
-        </header>
+      <article className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <Button variant="ghost" asChild className="mb-8">
+            <Link to="/blog" className="flex items-center gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
+          </Button>
+          
+          <Card className="max-w-4xl mx-auto">
+            <CardHeader className="space-y-4">
+              <CardTitle className="text-4xl font-bold">{post.title}</CardTitle>
+              <div className="flex flex-wrap gap-3 text-sm text-muted-foreground">
+                <span>By {post.author}</span>
+                <span>•</span>
+                <span>{post.date}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map(tag => (
+                  <span key={tag} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </CardHeader>
 
-        <main className="post-content">
-          <div className="container">
-            <div className="content-wrapper" dangerouslySetInnerHTML={{ __html: post.content }} />
-          </div>
-        </main>
+            <CardContent className="prose prose-lg dark:prose-invert max-w-none">
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </CardContent>
+          </Card>
+        </div>
       </article>
     </Layout>
   )
