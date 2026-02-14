@@ -1,0 +1,70 @@
+/* Portfolio-specific styles with dark mode support */
+
+.portfolio-header {
+    background: var(--hero-bg);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.case-study-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.case-study-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.case-study-card.highlight {
+    border-color: var(--link-color);
+    border-width: 2px;
+}
+
+.open-source-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.skill-category {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.skill-category h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.skill-category p {
+    color: var(--text-secondary);
+}
+
+/* Ensure consistent theming across portfolio pages */
+.portfolio-meta span {
+    opacity: 0.9;
+}
+
+.section-alt {
+    background-color: var(--bg-secondary);
+}

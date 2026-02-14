@@ -1,0 +1,5 @@
+/* Import all CSS files */
+@import url('/assets/css/style.css');
+@import url('/assets/css/skills.css');
+@import url('/assets/css/blog.css');
+@import url('/assets/css/portfolio.css');
