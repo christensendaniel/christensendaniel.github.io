@@ -12,6 +12,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  pull-requests: write
 
 jobs:
   test:
@@ -29,13 +30,19 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci
+          echo "✅ Dependencies installed"
       
       - name: Run tests
-        run: npm test
+        run: |
+          echo "🧪 Running Jest tests..."
+          npm test
+          echo "✅ Tests completed"
   
-  build-and-deploy:
-    name: Build and Deploy to GitHub Pages
+  build-and-verify:
+    name: Build and Verify
     runs-on: ubuntu-latest
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -51,10 +58,52 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci
+          echo "✅ Dependencies installed"
       
       - name: Build project
-        run: npm run build
+        run: |
+          echo "🏗️ Building project..."
+          npm run build
+          echo "✅ Build completed"
+      
+      - name: Verify build output
+        run: |
+          echo "🔍 Verifying build output..."
+          npm run verify-build
+      
+      - name: List build artifacts
+        run: |
+          echo "📋 Build artifacts:"
+          ls -lah dist/
+          echo ""
+          echo "📋 Assets directory:"
+          ls -lah dist/assets/ || echo "No assets directory"
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: dist/
+          retention-days: 7
+  
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build-and-verify
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: dist/
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -62,3 +111,90 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: christensendaniel.com
+      
+      - name: Wait for GitHub Pages deployment
+        run: |
+          echo "⏳ Waiting 30 seconds for GitHub Pages to update..."
+          sleep 30
+          echo "✅ Wait complete"
+  
+  verify-deployment:
+    name: Verify Deployment
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci
+          echo "✅ Dependencies installed"
+      
+      - name: Install Playwright browsers
+        run: |
+          echo "🎭 Installing Playwright browsers..."
+          npx playwright install --with-deps chromium
+          echo "✅ Playwright browsers installed"
+      
+      - name: Check deployment URL status
+        run: |
+          echo "🌐 Checking deployment URLs..."
+          npm run verify-deployment
+        continue-on-error: true
+      
+      - name: Capture screenshots
+        run: |
+          echo "📸 Capturing screenshots..."
+          node scripts/capture-screenshots.js
+        env:
+          DEPLOYMENT_URL: https://christensendaniel.com
+        continue-on-error: true
+      
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deployment-screenshots
+          path: screenshots/
+          retention-days: 30
+      
+      - name: Generate deployment report
+        if: always()
+        run: |
+          echo "📊 Generating deployment report..."
+          node scripts/generate-pr-comment.js
+      
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const comment = fs.readFileSync('screenshots/pr-comment.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+      
+      - name: Add deployment summary
+        if: always()
+        run: |
+          echo "## 🚀 Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Primary URL:** https://christensendaniel.com" >> $GITHUB_STEP_SUMMARY
+          echo "**GitHub Pages URL:** https://christensendaniel.github.io" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Screenshots and verification reports are available in the artifacts section." >> $GITHUB_STEP_SUMMARY
