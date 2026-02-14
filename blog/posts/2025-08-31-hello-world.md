@@ -54,4 +54,4 @@ I'm always interested in discussing data engineering challenges and solutions. F
 - [GitHub](https://github.com/christensendaniel)
 - [PyPI Package: paged-list](https://pypi.org/project/paged-list/)
 
-Looking forward to sharing more insights of enterprise data engineering!
+Looking forward to sharing more insights on enterprise data engineering!
