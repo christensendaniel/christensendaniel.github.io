@@ -103,9 +103,22 @@ test.describe('Deployment Verification', () => {
       const location = msg.location();
       
       // Skip Google Fonts errors (external resources that may be blocked)
-      if (text.includes('Failed to load resource') && 
-          (location.url.includes('googleapis.com') || location.url.includes('gstatic.com'))) {
-        return;
+      // Note: This is safe for test filtering - not used for security sanitization
+      // CodeQL: These URLs come from Playwright's location object (trusted source)
+      // and are only used to filter test console output, not for redirects or DOM manipulation
+      if (text.includes('Failed to load resource')) {
+        try {
+          const url = new URL(location.url);
+          const hostname = url.hostname;
+          if (hostname === 'fonts.googleapis.com' || 
+              hostname === 'fonts.gstatic.com' ||
+              hostname.endsWith('.googleapis.com') ||
+              hostname.endsWith('.gstatic.com')) {
+            return;
+          }
+        } catch {
+          // If URL parsing fails, skip
+        }
       }
       
       const logEntry = {
@@ -143,19 +156,46 @@ test.describe('Deployment Verification', () => {
     // Listen for failed requests (404s, etc.)
     page.on('requestfailed', request => {
       const failure = request.failure();
-      const url = request.url();
+      const urlString = request.url();
       
       // Skip external resources that may be blocked (Google Fonts, analytics, etc.)
-      if (url.includes('googleapis.com') || 
-          url.includes('gstatic.com') ||
-          url.includes('google-analytics.com') ||
-          url.includes('googletagmanager.com')) {
-        return;
+      // Use URL parsing for proper domain validation
+      try {
+        const url = new URL(urlString);
+        const hostname = url.hostname;
+        
+        // List of known external services to skip
+        const skipDomains = [
+          'fonts.googleapis.com',
+          'fonts.gstatic.com',
+          'www.google-analytics.com',
+          'www.googletagmanager.com'
+        ];
+        
+        if (skipDomains.includes(hostname) || 
+            hostname.endsWith('.googleapis.com') ||
+            hostname.endsWith('.gstatic.com') ||
+            hostname.endsWith('.google-analytics.com') ||
+            hostname.endsWith('.googletagmanager.com')) {
+          return;
+        }
+      } catch {
+        // If URL parsing fails, skip known protocol+domain patterns
+        const skipPatterns = [
+          '://fonts.googleapis.com',
+          '://fonts.gstatic.com',
+          '://www.google-analytics.com',
+          '://www.googletagmanager.com'
+        ];
+        
+        if (skipPatterns.some(pattern => urlString.includes(pattern))) {
+          return;
+        }
       }
       
       consoleLogs.errors.push({
         type: 'requestfailed',
-        text: `Failed to load: ${url}`,
+        text: `Failed to load: ${urlString}`,
         errorText: failure?.errorText || 'Unknown error',
         timestamp: new Date().toISOString()
       });
