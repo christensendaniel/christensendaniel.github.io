@@ -102,6 +102,12 @@ test.describe('Deployment Verification', () => {
       const text = msg.text();
       const location = msg.location();
       
+      // Skip Google Fonts errors (external resources that may be blocked)
+      if (text.includes('Failed to load resource') && 
+          (location.url.includes('googleapis.com') || location.url.includes('gstatic.com'))) {
+        return;
+      }
+      
       const logEntry = {
         type,
         text,
@@ -137,9 +143,19 @@ test.describe('Deployment Verification', () => {
     // Listen for failed requests (404s, etc.)
     page.on('requestfailed', request => {
       const failure = request.failure();
+      const url = request.url();
+      
+      // Skip external resources that may be blocked (Google Fonts, analytics, etc.)
+      if (url.includes('googleapis.com') || 
+          url.includes('gstatic.com') ||
+          url.includes('google-analytics.com') ||
+          url.includes('googletagmanager.com')) {
+        return;
+      }
+      
       consoleLogs.errors.push({
         type: 'requestfailed',
-        text: `Failed to load: ${request.url()}`,
+        text: `Failed to load: ${url}`,
         errorText: failure?.errorText || 'Unknown error',
         timestamp: new Date().toISOString()
       });
