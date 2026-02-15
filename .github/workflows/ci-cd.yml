@@ -138,6 +138,50 @@ jobs:
           echo "📋 Assets directory:"
           ls -lah dist/assets/ || echo "No assets directory"
       
+      - name: Verify no source files in build
+        run: |
+          echo "🔍 Ensuring no source files are in build output..."
+          
+          # Check that source directory doesn't exist in dist
+          if [ -d "dist/src" ]; then
+            echo "❌ ERROR: src/ directory found in dist/"
+            exit 1
+          fi
+          
+          # Check that package.json is not in dist
+          if [ -f "dist/package.json" ]; then
+            echo "❌ ERROR: package.json found in dist/"
+            exit 1
+          fi
+          
+          # Check that vite.config.js is not in dist
+          if [ -f "dist/vite.config.js" ]; then
+            echo "❌ ERROR: vite.config.js found in dist/"
+            exit 1
+          fi
+          
+          # Verify index.html does not reference src/main.jsx
+          if grep -q "src/main.jsx" dist/index.html; then
+            echo "❌ ERROR: index.html references src/main.jsx (development file)"
+            exit 1
+          fi
+          
+          # Verify index.html has compiled bundle reference
+          if grep -q "/assets/index-.*\.js" dist/index.html; then
+            echo "✅ index.html references compiled JS bundle"
+          else
+            echo "❌ ERROR: index.html missing compiled JS bundle reference"
+            exit 1
+          fi
+          
+          # Verify assets directory exists and has files
+          if [ ! -d "dist/assets" ] || [ -z "$(ls -A dist/assets)" ]; then
+            echo "❌ ERROR: Missing or empty assets directory"
+            exit 1
+          fi
+          
+          echo "✅ Build output verified - contains only production files"
+      
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -167,6 +211,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: christensendaniel.com
+          force_orphan: true
       
       - name: Wait for GitHub Pages deployment
         run: |
