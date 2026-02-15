@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { routerFutureFlags } from './constants/router'
 import Home from './pages/Home'
 import Skills from './pages/Skills'
 import Blog from './pages/Blog'
@@ -8,7 +9,7 @@ import Portfolio from './pages/Portfolio'
 
 function App() {
   return (
-    <Router>
+    <Router future={routerFutureFlags}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<Skills />} />

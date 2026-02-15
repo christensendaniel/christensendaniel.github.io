@@ -1,12 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../constants/router'
 import Blog from '../pages/Blog'
 
 describe('Blog component', () => {
   test('renders the blog page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Blog />
       </BrowserRouter>
     )
@@ -17,7 +18,7 @@ describe('Blog component', () => {
 
   test('renders blog posts', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Blog />
       </BrowserRouter>
     )
@@ -28,7 +29,7 @@ describe('Blog component', () => {
 
   test('renders read more link', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Blog />
       </BrowserRouter>
     )

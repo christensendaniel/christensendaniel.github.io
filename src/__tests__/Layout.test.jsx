@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../constants/router'
 import Layout from '../components/Layout'
 
 describe('Layout component', () => {
@@ -20,7 +21,7 @@ describe('Layout component', () => {
 
   test('renders children content', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout>
           <div data-testid="test-content">Test Content</div>
         </Layout>
@@ -32,7 +33,7 @@ describe('Layout component', () => {
 
   test('renders navigation by default', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -44,7 +45,7 @@ describe('Layout component', () => {
 
   test('hides navigation when showNavigation is false', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout showNavigation={false}>
           <div>Content</div>
         </Layout>
@@ -56,7 +57,7 @@ describe('Layout component', () => {
 
   test('renders footer', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -68,7 +69,7 @@ describe('Layout component', () => {
 
   test('toggles theme when theme toggle is clicked', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -92,7 +93,7 @@ describe('Layout component', () => {
 
   test('loads theme from localStorage on mount', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Layout>
           <div>Content</div>
         </Layout>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from './constants/router'
 
 /**
  * Custom render function that wraps components with necessary providers
@@ -15,7 +16,7 @@ export function renderWithRouter(ui, { route = '/', ...renderOptions } = {}) {
   
   function Wrapper({ children }) {
     return (
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         {children}
       </BrowserRouter>
     )

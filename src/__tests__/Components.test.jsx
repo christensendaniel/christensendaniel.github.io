@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import ThemeToggle from '../components/ThemeToggle'
@@ -9,7 +10,7 @@ describe('Navigation component', () => {
   test('renders navigation links', () => {
     const mockToggle = jest.fn()
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
       </BrowserRouter>
     )

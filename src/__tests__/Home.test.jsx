@@ -1,12 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../constants/router'
 import Home from '../pages/Home'
 
 describe('Home component', () => {
   test('renders the home page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
@@ -17,7 +18,7 @@ describe('Home component', () => {
 
   test('renders hero section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
@@ -28,7 +29,7 @@ describe('Home component', () => {
 
   test('renders about section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
