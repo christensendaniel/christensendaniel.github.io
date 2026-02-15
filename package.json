@@ -4,11 +4,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-version.js",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "test:deployment": "playwright test playwright/deployment-verification.spec.js",
     "verify-build": "node scripts/verify-build.js",
     "verify-deployment": "node scripts/verify-deployment.js"
   },
