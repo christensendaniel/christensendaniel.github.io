@@ -178,11 +178,24 @@ npm run preview
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch:
 
 1. GitHub Actions runs all tests
-2. If tests pass, the app is built
-3. The build output is deployed to the `gh-pages` branch
+2. If tests pass, the app is built with `npm run build` (creates `dist/` directory)
+3. The build output (`dist/` folder) is deployed to the `gh-pages` branch
 4. GitHub Pages serves the site from the `gh-pages` branch
 
 The deployment workflow is defined in `.github/workflows/ci-cd.yml`.
+
+### ⚠️ Important: GitHub Pages Configuration
+
+**CRITICAL:** For the deployment to work correctly, GitHub Pages must be configured to deploy from the `gh-pages` branch:
+
+1. Go to [Settings → Pages](https://github.com/christensendaniel/christensendaniel.github.io/settings/pages)
+2. Under "Build and deployment" → "Source": Select **"Deploy from a branch"**
+3. Under "Branch": Select **`gh-pages`** and **`/ (root)`**
+4. Click **Save**
+
+❌ **DO NOT** deploy from `main` branch - this will serve source files instead of compiled build files.
+
+See [GITHUB_PAGES_FIX.md](./GITHUB_PAGES_FIX.md) for detailed troubleshooting if the site shows a blank screen.
 
 ---
 
