@@ -6,9 +6,15 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Portfolio from './pages/Portfolio'
 
+// React Router v7 future flags to eliminate deprecation warnings
+const routerFutureFlags = {
+  v7_startTransition: true,
+  v7_relativeSplatPath: true,
+}
+
 function App() {
   return (
-    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <Router future={routerFutureFlags}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/skills" element={<Skills />} />

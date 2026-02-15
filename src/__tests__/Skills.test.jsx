@@ -1,12 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import Skills from '../pages/Skills'
 
 describe('Skills component', () => {
   test('renders the skills page', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Skills />
       </BrowserRouter>
     )
@@ -17,7 +18,7 @@ describe('Skills component', () => {
 
   test('renders programming section', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Skills />
       </BrowserRouter>
     )
@@ -28,7 +29,7 @@ describe('Skills component', () => {
 
   test('renders data platforms section', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Skills />
       </BrowserRouter>
     )

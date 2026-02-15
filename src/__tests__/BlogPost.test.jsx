@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter, Routes, Route, MemoryRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import BlogPost from '../pages/BlogPost'
 
 // Mock localStorage for Layout component
@@ -14,7 +15,7 @@ global.localStorage = localStorageMock
 describe('BlogPost component', () => {
   test('renders blog post page', () => {
     render(
-      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -27,7 +28,7 @@ describe('BlogPost component', () => {
 
   test('renders back button', () => {
     render(
-      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -40,7 +41,7 @@ describe('BlogPost component', () => {
 
   test('renders post metadata', () => {
     render(
-      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -55,7 +56,7 @@ describe('BlogPost component', () => {
 
   test('handles invalid post ID', () => {
     render(
-      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/invalid-post']}>
+      <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/invalid-post']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>

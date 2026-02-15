@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import Home from '../pages/Home'
 import Skills from '../pages/Skills'
 import Blog from '../pages/Blog'
@@ -9,7 +10,7 @@ import Portfolio from '../pages/Portfolio'
 describe('Snapshot Tests', () => {
   test('Home page snapshot', () => {
     const { container } = render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
@@ -18,7 +19,7 @@ describe('Snapshot Tests', () => {
 
   test('Skills page snapshot', () => {
     const { container } = render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Skills />
       </BrowserRouter>
     )
@@ -27,7 +28,7 @@ describe('Snapshot Tests', () => {
 
   test('Blog page snapshot', () => {
     const { container } = render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Blog />
       </BrowserRouter>
     )
@@ -36,7 +37,7 @@ describe('Snapshot Tests', () => {
 
   test('Portfolio page snapshot', () => {
     const { container } = render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Portfolio />
       </BrowserRouter>
     )

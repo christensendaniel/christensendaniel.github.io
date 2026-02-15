@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
@@ -10,7 +11,7 @@ describe('Accessibility Tests', () => {
     test('navigation has proper semantic HTML', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -23,7 +24,7 @@ describe('Accessibility Tests', () => {
     test('navigation links have proper labels', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -38,7 +39,7 @@ describe('Accessibility Tests', () => {
     test('theme toggle has accessible label', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -68,7 +69,7 @@ describe('Accessibility Tests', () => {
   describe('Page accessibility', () => {
     test('home page has main heading', () => {
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
       )
@@ -80,7 +81,7 @@ describe('Accessibility Tests', () => {
 
     test('home page has proper heading hierarchy', () => {
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
       )
@@ -93,7 +94,7 @@ describe('Accessibility Tests', () => {
     test('interactive elements are keyboard accessible', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -110,7 +111,7 @@ describe('Accessibility Tests', () => {
   describe('Link accessibility', () => {
     test('all links have meaningful text', () => {
       render(
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
       )

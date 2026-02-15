@@ -3,6 +3,15 @@ import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 
 /**
+ * React Router v7 future flags configuration
+ * Used to opt-in to v7 behaviors early and eliminate deprecation warnings
+ */
+export const routerFutureFlags = {
+  v7_startTransition: true,
+  v7_relativeSplatPath: true,
+}
+
+/**
  * Custom render function that wraps components with necessary providers
  * Usage: import { renderWithRouter } from './test-utils'
  * 
@@ -15,7 +24,7 @@ export function renderWithRouter(ui, { route = '/', ...renderOptions } = {}) {
   
   function Wrapper({ children }) {
     return (
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         {children}
       </BrowserRouter>
     )

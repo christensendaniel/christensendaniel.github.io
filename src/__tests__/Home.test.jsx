@@ -1,12 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import Home from '../pages/Home'
 
 describe('Home component', () => {
   test('renders the home page', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
@@ -17,7 +18,7 @@ describe('Home component', () => {
 
   test('renders hero section', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )
@@ -28,7 +29,7 @@ describe('Home component', () => {
 
   test('renders about section', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Home />
       </BrowserRouter>
     )

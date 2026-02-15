@@ -1,12 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { routerFutureFlags } from '../test-utils'
 import Portfolio from '../pages/Portfolio'
 
 describe('Portfolio component', () => {
   test('renders the portfolio page', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Portfolio />
       </BrowserRouter>
     )
@@ -17,7 +18,7 @@ describe('Portfolio component', () => {
 
   test('renders case studies section', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Portfolio />
       </BrowserRouter>
     )
@@ -29,7 +30,7 @@ describe('Portfolio component', () => {
 
   test('renders technical content', () => {
     render(
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter future={routerFutureFlags}>
         <Portfolio />
       </BrowserRouter>
     )
