@@ -9,7 +9,7 @@ import Portfolio from '../pages/Portfolio'
 describe('Snapshot Tests', () => {
   test('Home page snapshot', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Home />
       </BrowserRouter>
     )
@@ -18,7 +18,7 @@ describe('Snapshot Tests', () => {
 
   test('Skills page snapshot', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Skills />
       </BrowserRouter>
     )
@@ -27,7 +27,7 @@ describe('Snapshot Tests', () => {
 
   test('Blog page snapshot', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Blog />
       </BrowserRouter>
     )
@@ -36,7 +36,7 @@ describe('Snapshot Tests', () => {
 
   test('Portfolio page snapshot', () => {
     const { container } = render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Portfolio />
       </BrowserRouter>
     )

@@ -6,7 +6,7 @@ import Home from '../pages/Home'
 describe('Home component', () => {
   test('renders the home page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Home />
       </BrowserRouter>
     )
@@ -17,7 +17,7 @@ describe('Home component', () => {
 
   test('renders hero section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Home />
       </BrowserRouter>
     )
@@ -28,7 +28,7 @@ describe('Home component', () => {
 
   test('renders about section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Home />
       </BrowserRouter>
     )

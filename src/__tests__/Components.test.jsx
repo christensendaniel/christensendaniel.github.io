@@ -9,7 +9,7 @@ describe('Navigation component', () => {
   test('renders navigation links', () => {
     const mockToggle = jest.fn()
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
       </BrowserRouter>
     )

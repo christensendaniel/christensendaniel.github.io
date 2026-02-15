@@ -14,7 +14,7 @@ global.localStorage = localStorageMock
 describe('BlogPost component', () => {
   test('renders blog post page', () => {
     render(
-      <MemoryRouter initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -27,7 +27,7 @@ describe('BlogPost component', () => {
 
   test('renders back button', () => {
     render(
-      <MemoryRouter initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -40,7 +40,7 @@ describe('BlogPost component', () => {
 
   test('renders post metadata', () => {
     render(
-      <MemoryRouter initialEntries={['/blog/2025-08-31-hello-world']}>
+      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>
@@ -55,7 +55,7 @@ describe('BlogPost component', () => {
 
   test('handles invalid post ID', () => {
     render(
-      <MemoryRouter initialEntries={['/blog/invalid-post']}>
+      <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }} initialEntries={['/blog/invalid-post']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
         </Routes>

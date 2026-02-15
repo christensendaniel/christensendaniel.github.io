@@ -15,7 +15,7 @@ export function renderWithRouter(ui, { route = '/', ...renderOptions } = {}) {
   
   function Wrapper({ children }) {
     return (
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         {children}
       </BrowserRouter>
     )

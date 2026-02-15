@@ -6,7 +6,7 @@ import Portfolio from '../pages/Portfolio'
 describe('Portfolio component', () => {
   test('renders the portfolio page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Portfolio />
       </BrowserRouter>
     )
@@ -17,7 +17,7 @@ describe('Portfolio component', () => {
 
   test('renders case studies section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Portfolio />
       </BrowserRouter>
     )
@@ -29,7 +29,7 @@ describe('Portfolio component', () => {
 
   test('renders technical content', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Portfolio />
       </BrowserRouter>
     )

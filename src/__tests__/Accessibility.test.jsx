@@ -10,7 +10,7 @@ describe('Accessibility Tests', () => {
     test('navigation has proper semantic HTML', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -23,7 +23,7 @@ describe('Accessibility Tests', () => {
     test('navigation links have proper labels', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -38,7 +38,7 @@ describe('Accessibility Tests', () => {
     test('theme toggle has accessible label', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -68,7 +68,7 @@ describe('Accessibility Tests', () => {
   describe('Page accessibility', () => {
     test('home page has main heading', () => {
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Home />
         </BrowserRouter>
       )
@@ -80,7 +80,7 @@ describe('Accessibility Tests', () => {
 
     test('home page has proper heading hierarchy', () => {
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Home />
         </BrowserRouter>
       )
@@ -93,7 +93,7 @@ describe('Accessibility Tests', () => {
     test('interactive elements are keyboard accessible', () => {
       const mockToggle = jest.fn()
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
       )
@@ -110,7 +110,7 @@ describe('Accessibility Tests', () => {
   describe('Link accessibility', () => {
     test('all links have meaningful text', () => {
       render(
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Home />
         </BrowserRouter>
       )

@@ -6,7 +6,7 @@ import Skills from '../pages/Skills'
 describe('Skills component', () => {
   test('renders the skills page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Skills />
       </BrowserRouter>
     )
@@ -17,7 +17,7 @@ describe('Skills component', () => {
 
   test('renders programming section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Skills />
       </BrowserRouter>
     )
@@ -28,7 +28,7 @@ describe('Skills component', () => {
 
   test('renders data platforms section', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Skills />
       </BrowserRouter>
     )

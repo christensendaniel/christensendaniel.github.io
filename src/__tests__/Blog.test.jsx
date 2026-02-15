@@ -6,7 +6,7 @@ import Blog from '../pages/Blog'
 describe('Blog component', () => {
   test('renders the blog page', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Blog />
       </BrowserRouter>
     )
@@ -17,7 +17,7 @@ describe('Blog component', () => {
 
   test('renders blog posts', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Blog />
       </BrowserRouter>
     )
@@ -28,7 +28,7 @@ describe('Blog component', () => {
 
   test('renders read more link', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Blog />
       </BrowserRouter>
     )

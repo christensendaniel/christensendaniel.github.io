@@ -12,6 +12,10 @@ export default {
     '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/playwright/'
+  ],
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
     '!src/index.jsx',

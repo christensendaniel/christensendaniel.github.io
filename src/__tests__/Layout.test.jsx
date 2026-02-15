@@ -20,7 +20,7 @@ describe('Layout component', () => {
 
   test('renders children content', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <div data-testid="test-content">Test Content</div>
         </Layout>
@@ -32,7 +32,7 @@ describe('Layout component', () => {
 
   test('renders navigation by default', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -44,7 +44,7 @@ describe('Layout component', () => {
 
   test('hides navigation when showNavigation is false', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout showNavigation={false}>
           <div>Content</div>
         </Layout>
@@ -56,7 +56,7 @@ describe('Layout component', () => {
 
   test('renders footer', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -68,7 +68,7 @@ describe('Layout component', () => {
 
   test('toggles theme when theme toggle is clicked', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <div>Content</div>
         </Layout>
@@ -92,7 +92,7 @@ describe('Layout component', () => {
 
   test('loads theme from localStorage on mount', () => {
     render(
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <div>Content</div>
         </Layout>
