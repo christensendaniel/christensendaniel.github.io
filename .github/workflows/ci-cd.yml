@@ -167,7 +167,7 @@ jobs:
           fi
           
           # Verify index.html has compiled bundle reference
-          if grep -qE "/assets/index-[^\"']*\.js" dist/index.html; then
+          if grep -qE "/assets/index-[a-zA-Z0-9_-]+\.js" dist/index.html; then
             echo "✅ index.html references compiled JS bundle"
           else
             echo "❌ ERROR: index.html missing compiled JS bundle reference"
@@ -175,8 +175,13 @@ jobs:
           fi
           
           # Verify assets directory exists and has files
-          if [ ! -d "dist/assets" ] || [ -z "$(ls -A dist/assets)" ]; then
-            echo "❌ ERROR: Missing or empty assets directory"
+          if [ ! -d "dist/assets" ]; then
+            echo "❌ ERROR: Missing assets directory"
+            exit 1
+          fi
+          
+          if [ -z "$(find dist/assets -maxdepth 1 -type f -print -quit)" ]; then
+            echo "❌ ERROR: Empty assets directory"
             exit 1
           fi
           
