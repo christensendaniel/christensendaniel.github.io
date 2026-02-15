@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter, Routes, Route, MemoryRouter } from 'react-router-dom'
-import { routerFutureFlags } from '../test-utils'
+import { routerFutureFlags } from '../constants/router'
 import BlogPost from '../pages/BlogPost'
 
 // Mock localStorage for Layout component

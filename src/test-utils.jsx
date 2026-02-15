@@ -1,15 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-
-/**
- * React Router v7 future flags configuration
- * Used to opt-in to v7 behaviors early and eliminate deprecation warnings
- */
-export const routerFutureFlags = {
-  v7_startTransition: true,
-  v7_relativeSplatPath: true,
-}
+import { routerFutureFlags } from './constants/router'
 
 /**
  * Custom render function that wraps components with necessary providers

@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import { routerFutureFlags } from '../test-utils'
+import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import ThemeToggle from '../components/ThemeToggle'

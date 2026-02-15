@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import { routerFutureFlags } from '../test-utils'
+import { routerFutureFlags } from '../constants/router'
 import Home from '../pages/Home'
 import Skills from '../pages/Skills'
 import Blog from '../pages/Blog'

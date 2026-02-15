@@ -1,16 +1,11 @@
 import React from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { routerFutureFlags } from './constants/router'
 import Home from './pages/Home'
 import Skills from './pages/Skills'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Portfolio from './pages/Portfolio'
-
-// React Router v7 future flags to eliminate deprecation warnings
-const routerFutureFlags = {
-  v7_startTransition: true,
-  v7_relativeSplatPath: true,
-}
 
 function App() {
   return (

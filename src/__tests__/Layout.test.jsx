@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import { routerFutureFlags } from '../test-utils'
+import { routerFutureFlags } from '../constants/router'
 import Layout from '../components/Layout'
 
 describe('Layout component', () => {
