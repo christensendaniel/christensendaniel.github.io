@@ -8,7 +8,7 @@
 
 const DEPLOYMENT_URL = process.env.DEPLOYMENT_URL || 'https://christensendaniel.com';
 const MAX_RETRIES = 3;
-const RETRY_DELAY_MS = 5000; // 5 seconds
+const RETRY_BASE_DELAY_MS = 5000; // 5 seconds base delay
 
 async function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -30,8 +30,9 @@ async function fetchDeployment(retryCount = 0) {
     if (status !== 200) {
       console.log(`❌ ERROR: Expected 200, got ${status}`);
       if (retryCount < MAX_RETRIES) {
-        console.log(`   Retrying in ${RETRY_DELAY_MS/1000} seconds... (${retryCount + 1}/${MAX_RETRIES})`);
-        await sleep(RETRY_DELAY_MS);
+        const delayMs = RETRY_BASE_DELAY_MS * Math.pow(2, retryCount);
+        console.log(`   Retrying in ${delayMs/1000} seconds... (${retryCount + 1}/${MAX_RETRIES})`);
+        await sleep(delayMs);
         return fetchDeployment(retryCount + 1);
       }
       process.exit(1);
@@ -41,8 +42,9 @@ async function fetchDeployment(retryCount = 0) {
   } catch (error) {
     console.error(`❌ Error fetching deployment: ${error.message}`);
     if (retryCount < MAX_RETRIES) {
-      console.log(`   Retrying in ${RETRY_DELAY_MS/1000} seconds... (${retryCount + 1}/${MAX_RETRIES})`);
-      await sleep(RETRY_DELAY_MS);
+      const delayMs = RETRY_BASE_DELAY_MS * Math.pow(2, retryCount);
+      console.log(`   Retrying in ${delayMs/1000} seconds... (${retryCount + 1}/${MAX_RETRIES})`);
+      await sleep(delayMs);
       return fetchDeployment(retryCount + 1);
     }
     process.exit(1);
