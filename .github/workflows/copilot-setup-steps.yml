@@ -1,6 +1,7 @@
 name: Copilot Setup and Site Verification
 
 # This workflow can be triggered manually or on schedule to verify site accessibility
+# It should NOT run on push to avoid racing with the deployment process
 on:
   workflow_dispatch:
     inputs:
@@ -11,11 +12,6 @@ on:
   schedule:
     # Run daily at 12:00 UTC to verify site health
     - cron: '0 12 * * *'
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/copilot-setup-steps.yml'
 
 permissions:
   contents: read
