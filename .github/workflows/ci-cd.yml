@@ -167,7 +167,7 @@ jobs:
           fi
           
           # Verify index.html has compiled bundle reference
-          if grep -q "/assets/index-.*\.js" dist/index.html; then
+          if grep -qE "/assets/index-[^\"']*\.js" dist/index.html; then
             echo "✅ index.html references compiled JS bundle"
           else
             echo "❌ ERROR: index.html missing compiled JS bundle reference"
