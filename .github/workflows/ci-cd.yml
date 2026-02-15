@@ -167,6 +167,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: christensendaniel.com
+          force_orphan: true
       
       - name: Wait for GitHub Pages deployment
         run: |
