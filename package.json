@@ -10,6 +10,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:deployment": "playwright test playwright/deployment-verification.spec.js",
+    "test:deployed-site": "node scripts/test-deployed-site.js",
     "verify-build": "node scripts/verify-build.js",
     "verify-deployment": "node scripts/verify-deployment.js"
   },
