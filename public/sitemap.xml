@@ -36,6 +36,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://christensendaniel.com/blog/2026-02-17-why-i-use-uv-python-dependencies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://christensendaniel.com/blog/2026-02-17-building-portfolio-site-ai-github-pages/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
