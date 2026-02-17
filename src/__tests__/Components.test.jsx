@@ -1,25 +1,34 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import ThemeToggle from '../components/ThemeToggle'
 
+const renderWithHelmet = (ui) => {
+  return render(
+    <HelmetProvider>
+      {ui}
+    </HelmetProvider>
+  )
+}
+
 describe('Navigation component', () => {
   test('renders navigation links', () => {
     const mockToggle = jest.fn()
-    render(
+    renderWithHelmet(
       <BrowserRouter future={routerFutureFlags}>
         <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
       </BrowserRouter>
     )
     
     // Check for nav links - using actual link text from current component
-    expect(screen.getByText(/About/i)).toBeInTheDocument()
+    expect(screen.getByText(/Home/i)).toBeInTheDocument()
+    expect(screen.getByText(/Skills/i)).toBeInTheDocument()
+    expect(screen.getByText(/Portfolio/i)).toBeInTheDocument()
     expect(screen.getByText(/Blog/i)).toBeInTheDocument()
-    expect(screen.getByText(/Expertise/i)).toBeInTheDocument()
-    expect(screen.getByText(/Experience/i)).toBeInTheDocument()
   })
 })
 
