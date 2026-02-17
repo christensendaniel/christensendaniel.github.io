@@ -404,12 +404,67 @@ describe('PageName', () => {
 - Vite code splitting (automatic)
 - CSS purging via Tailwind (automatic)
 
-### Accessibility
-- Semantic HTML elements
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Color contrast meets WCAG AA standards
-- Screen reader friendly navigation
+### Accessibility (WCAG 2.1 AA Compliant)
+
+The site follows WCAG 2.1 Level AA accessibility standards. Key accessibility features include:
+
+#### Core Accessibility Features
+- **Skip Navigation Link**: "Skip to main content" link for keyboard users (visible on focus)
+  - Location: `src/components/Layout.jsx`
+  - Links to `#main-content` on the main element
+- **Semantic HTML**: Proper use of `<nav>`, `<main>`, `<header>`, `<footer>`, `<section>` elements throughout
+- **ARIA Labels**: All interactive elements have proper labels and states
+  - Mobile menu button includes `aria-expanded` state
+  - Theme toggle has descriptive `aria-label`
+- **Keyboard Navigation**: All interactive elements are fully keyboard accessible
+- **Focus Indicators**: Enhanced focus styles with 2px solid outline and 2px offset (meets 3:1 contrast)
+  - Location: `src/index.css` - `*:focus-visible` styles
+- **Color Contrast**: All colors meet WCAG AA 4.5:1 contrast ratio
+  - Light mode muted text: `215.4 16.3% 46.9%`
+  - Dark mode muted text: `215 20.2% 65.1%`
+- **Screen Reader Support**:
+  - External links include sr-only "(opens in new tab)" text
+  - Loading states have `role="status"` and `aria-live="polite"`
+  - Icons have `aria-hidden="true"` when decorative
+
+#### Screen Reader Only Utility
+The `.sr-only` class hides content visually but keeps it accessible to screen readers:
+```css
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+```
+Location: `src/index.css`
+
+#### Accessibility Requirements for New Components
+When adding new components, ensure:
+1. **Skip links work**: Main content must have `id="main-content"`
+2. **Focus styles visible**: Test with Tab key in both light/dark modes
+3. **External links**: Add `<span className="sr-only">(opens in new tab)</span>` for `target="_blank"` links
+4. **Icons decorative**: Add `aria-hidden="true"` to icons when they're purely visual
+5. **Loading states**: Include `role="status"` and `aria-live="polite"` on loading indicators
+6. **Button states**: Use `aria-expanded` for expandable elements, `aria-label` for icon-only buttons
+7. **Heading hierarchy**: Don't skip heading levels (h1 → h2 → h3, not h1 → h3)
+8. **Color contrast**: Test all text colors with WebAIM Contrast Checker (4.5:1 minimum)
+
+#### Accessibility Testing
+- Manual keyboard navigation testing required before committing
+- Screen reader testing recommended for major changes
+- Automated accessibility tests in `src/__tests__/Accessibility.test.jsx`
+- Tests cover: skip navigation, ARIA attributes, semantic HTML, loading states
+
+#### External Resources
+- WCAG 2.1 Guidelines: https://www.w3.org/WAI/WCAG21/quickref/
+- WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
+- Full accessibility audit: `docs/suggestions/ACCESSIBILITY.md`
 
 ---
 
@@ -445,5 +500,6 @@ When generating code for this project, remember:
 8. ✅ **Auto-generate sitemap** (run npm run prebuild)
 9. ✅ **Test before committing** (npm test must pass)
 10. ✅ **Internal linking** for SEO (cross-link related pages)
+11. ✅ **Accessibility** (WCAG 2.1 AA - skip links, ARIA labels, focus styles, sr-only text)
 
 **When in doubt**: Check the docs/ folder or ask for clarification. Better to ask than to introduce inconsistencies.
