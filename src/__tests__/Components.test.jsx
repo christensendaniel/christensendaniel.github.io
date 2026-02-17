@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
@@ -19,9 +19,9 @@ describe('Navigation component', () => {
   test('renders navigation links', () => {
     const mockToggle = jest.fn()
     renderWithHelmet(
-      <BrowserRouter future={routerFutureFlags}>
+      <MemoryRouter future={routerFutureFlags}>
         <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
-      </BrowserRouter>
+      </MemoryRouter>
     )
     
     // Check for nav links - using actual link text from current component

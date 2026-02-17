@@ -204,9 +204,9 @@ test.describe('Deployment Verification', () => {
     // Navigate to main page and key routes
     const routes = [
       '/',
-      '/#/skills',
-      '/#/blog',
-      '/#/portfolio'
+      '/skills',
+      '/blog',
+      '/portfolio'
     ];
     
     for (const route of routes) {
