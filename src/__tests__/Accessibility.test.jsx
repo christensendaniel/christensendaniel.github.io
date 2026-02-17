@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
@@ -20,9 +20,9 @@ describe('Accessibility Tests', () => {
     test('navigation has proper semantic HTML', () => {
       const mockToggle = jest.fn()
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       // Check for nav element
@@ -33,9 +33,9 @@ describe('Accessibility Tests', () => {
     test('navigation links have proper labels', () => {
       const mockToggle = jest.fn()
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       // Check that links have text content
@@ -48,9 +48,9 @@ describe('Accessibility Tests', () => {
     test('theme toggle has accessible label', () => {
       const mockToggle = jest.fn()
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       const button = screen.getByRole('button', { name: /toggle theme/i })
@@ -78,9 +78,9 @@ describe('Accessibility Tests', () => {
   describe('Page accessibility', () => {
     test('home page has main heading', () => {
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Home />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       // Check for h1 heading
@@ -90,9 +90,9 @@ describe('Accessibility Tests', () => {
 
     test('home page has proper heading hierarchy', () => {
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Home />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       // Check for h2 headings
@@ -103,9 +103,9 @@ describe('Accessibility Tests', () => {
     test('interactive elements are keyboard accessible', () => {
       const mockToggle = jest.fn()
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       // All buttons should be focusable
@@ -120,9 +120,9 @@ describe('Accessibility Tests', () => {
   describe('Link accessibility', () => {
     test('all links have meaningful text', () => {
       renderWithHelmet(
-        <BrowserRouter future={routerFutureFlags}>
+        <MemoryRouter future={routerFutureFlags}>
           <Home />
-        </BrowserRouter>
+        </MemoryRouter>
       )
       
       const links = screen.getAllByRole('link')
