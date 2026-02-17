@@ -238,7 +238,64 @@ function Skills() {
           </div>
         </section>
 
-        <section id="certifications" className="py-16 md:py-24">
+        <section id="ai-ml" className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">AI/ML & LLM Engineering</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+              <Card className="border-primary/50 bg-primary/5">
+                <CardHeader>
+                  <CardTitle className="text-lg">LLM Fine-Tuning & Training</CardTitle>
+                  <CardDescription>LoRA, QLoRA, PEFT, Hugging Face Transformers</CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Parameter-efficient fine-tuning techniques for domain-specific LLM adaptation. Experience with Hugging Face ecosystem for model training and deployment.
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/50 bg-primary/5">
+                <CardHeader>
+                  <CardTitle className="text-lg">AI Agent Creation</CardTitle>
+                  <CardDescription>LangGraph, CrewAI, AutoGen</CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Building autonomous AI agents with multi-step reasoning and tool use. Agent orchestration, memory management, and task decomposition.
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/50 bg-primary/5">
+                <CardHeader>
+                  <CardTitle className="text-lg">AI Implementation in Production</CardTitle>
+                  <CardDescription>Production-ready AI systems at scale</CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Deploying and maintaining AI systems in production environments. API integration, latency optimization, and cost management for LLM applications.
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/50 bg-primary/5">
+                <CardHeader>
+                  <CardTitle className="text-lg">AI Data Analysis</CardTitle>
+                  <CardDescription>LLM-powered analytics pipelines</CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Building automated analytics workflows powered by LLMs. Natural language to SQL, automated insight generation, and intelligent data exploration.
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/50 bg-primary/5">
+                <CardHeader>
+                  <CardTitle className="text-lg">AI Data Governance</CardTitle>
+                  <CardDescription>Model monitoring, bias detection, responsible AI</CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-muted-foreground">
+                  Implementing data lineage for AI systems, model performance monitoring, bias detection, and responsible AI practices. Ensuring compliance and ethical AI deployment.
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section id="certifications" className="py-16 md:py-24 bg-muted/50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Professional Development</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
