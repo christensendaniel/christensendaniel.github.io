@@ -501,5 +501,43 @@ When generating code for this project, remember:
 9. ✅ **Test before committing** (npm test must pass)
 10. ✅ **Internal linking** for SEO (cross-link related pages)
 11. ✅ **Accessibility** (WCAG 2.1 AA - skip links, ARIA labels, focus styles, sr-only text)
+12. ✅ **Dynamic copyright** (uses getFullYear(), no hardcoded years)
+13. ✅ **Functional CTAs** (all buttons and links work correctly)
+
+---
+
+## Recent Improvements & Current State (Feb 2026)
+
+### ✅ Recently Implemented Features
+The following improvements have been successfully implemented:
+
+1. **Skip Navigation Link** - Fully WCAG 2.1 AA compliant skip-to-content link in Layout.jsx
+2. **Dynamic Copyright Year** - Footer automatically updates copyright year
+3. **Accessibility Enhancements**:
+   - Hamburger menu has aria-expanded and dynamic aria-label
+   - sr-only utility class for screen reader-only content
+   - Proper focus indicators throughout
+4. **SEO Improvements**:
+   - Canonical URLs with trailing slashes consistently applied
+   - Structured data for Person and BreadcrumbList
+5. **Usability Fixes**:
+   - All CTA buttons are functional (no dead links)
+   - No "Coming Soon" placeholder content
+6. **Professional Email**: contact@christensendaniel.com visible in footer
+
+### 🔄 Known Gaps & Opportunities
+Areas for potential future improvement:
+
+1. **Open Graph Images**: SEO component supports OG images but none are currently provided
+2. **Font Loading**: Using Google Fonts (Inter, JetBrains Mono) - could optimize with system fonts
+3. **Structured Data**: Has Person and Breadcrumb schemas; missing Organization and WebSite schemas
+4. **Professional Photo**: No personal photo on homepage (could increase trust/engagement)
+5. **Contact Page**: No dedicated contact page (only email in footer)
+6. **Resume Download**: No downloadable resume/CV available
+7. **Blog Density**: Limited blog posts (could benefit from more regular content)
+
+See `docs/suggestions/` for comprehensive improvement roadmap.
+
+---
 
 **When in doubt**: Check the docs/ folder or ask for clarification. Better to ask than to introduce inconsistencies.

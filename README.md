@@ -16,6 +16,7 @@ This is the portfolio website for Daniel B. Christensen, a Senior Data Engineer 
 - **Blog** - Technical articles on data engineering, performance optimization, and cloud architecture
 - **Dark Mode Default** - Professional dark theme with light mode toggle
 - **Responsive Design** - Optimized for all device sizes with mobile hamburger navigation
+- **WCAG 2.1 AA Accessibility** - Skip navigation, proper ARIA labels, keyboard navigation, screen reader support
 - **SEO Optimized** - Structured data, internal linking, and auto-generated sitemaps
 - **Fast Performance** - Built with Vite for lightning-fast builds and optimal load times
 
@@ -231,13 +232,18 @@ This is a personal portfolio website. If you notice any issues or have suggestio
 - **UI Components:** Use shadcn/ui only (no other UI libraries)
 - **Styling:** Tailwind CSS only (no inline styles or CSS modules)
 - **Router:** BrowserRouter is used (not HashRouter)
+- **Accessibility:** WCAG 2.1 AA compliant (skip nav, ARIA labels, keyboard navigation)
 - **Testing:** All new components require unit tests
 - **Coverage:** Minimum 50% code coverage for branches, functions, lines, and statements
+- **Documentation:** See `docs/suggestions/` for improvement roadmap and audit results
 
 ## License
 
-© 2024 Daniel B. Christensen. All rights reserved.
+© 2024-2026 Daniel B. Christensen. All rights reserved.
 
 ## Contact
 
-Connect with me on [LinkedIn](https://linkedin.com/in/dbchristensen) for professional inquiries and opportunities.
+- **Email:** contact@christensendaniel.com
+- **LinkedIn:** [linkedin.com/in/dbchristensen](https://linkedin.com/in/dbchristensen)
+
+For professional inquiries and opportunities, feel free to reach out!
