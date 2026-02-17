@@ -44,7 +44,7 @@ function Contact() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-muted-foreground text-center mb-12">
-              I'm always interested in hearing about new opportunities, interesting projects, or just connecting with fellow data engineers.
+              I'm always interested in connecting with fellow data engineers, being a guest on podcasts, or discussing general data engineering design and architecture.
               Feel free to reach out through any of the channels below.
             </p>
 
@@ -64,7 +64,7 @@ function Contact() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Connect with me on LinkedIn for professional networking, collaboration opportunities, or just to say hello.
+                    Connect with me on LinkedIn for professional networking, podcast invitations, discussing data engineering design, or just to say hello.
                   </p>
                   <Button asChild size="lg" className="w-full">
                     <a 
@@ -95,7 +95,7 @@ function Contact() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Send me an email for direct inquiries, consulting opportunities, or detailed discussions.
+                    Send me an email for podcast invitations, discussing data engineering topics, or general inquiries.
                   </p>
                   <Button asChild variant="outline" size="lg" className="w-full">
                     <a 
@@ -127,7 +127,11 @@ function Contact() {
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Data engineering architecture and pipeline design</span>
+                    <span>Being a guest on podcasts about data engineering and technology</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Discussing data engineering architecture and design patterns</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
@@ -143,13 +147,25 @@ function Contact() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">•</span>
-                    <span>Technical consulting and mentorship</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
                     <span>Professional networking and collaboration opportunities</span>
                   </li>
                 </ul>
+                
+                <div className="mt-6 p-4 rounded-lg bg-muted/50 border border-muted">
+                  <p className="text-sm text-muted-foreground">
+                    <strong className="text-foreground">For consulting services:</strong> If you need consulting beyond general conversation, 
+                    I recommend reaching out to{' '}
+                    <a 
+                      href="https://savvbi.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-medium"
+                    >
+                      SAVVBI
+                    </a>
+                    {' '}for professional AI and data engineering services.
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
