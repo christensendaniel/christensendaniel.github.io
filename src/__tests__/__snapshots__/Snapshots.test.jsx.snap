@@ -230,11 +230,11 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                     Building a Modern Portfolio Site with AI: From Static HTML to React
                   </a>
                 </h3>
-                <p
+                <div
                   class="text-sm text-muted-foreground mt-2"
                 >
                   February 17, 2026
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -297,11 +297,11 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                     Training My Own LLM Part 5: Evaluation, Deployment, and Honest Conclusions
                   </a>
                 </h3>
-                <p
+                <div
                   class="text-sm text-muted-foreground mt-2"
                 >
                   October 4, 2025
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -364,11 +364,11 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                     Training My Own LLM Part 1: Why I Did It and What I Was Getting Into
                   </a>
                 </h3>
-                <p
+                <div
                   class="text-sm text-muted-foreground mt-2"
                 >
                   September 6, 2025
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -431,11 +431,11 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                     Hello World: Building Scalable Data Pipelines
                   </a>
                 </h3>
-                <p
+                <div
                   class="text-sm text-muted-foreground mt-2"
                 >
                   August 31, 2025
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1158,11 +1158,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                     >
                       The Walt Disney Company
                     </h3>
-                    <p
+                    <div
                       class="text-base font-medium text-foreground mt-1"
                     >
                       Senior Data Engineer
-                    </p>
+                    </div>
                   </div>
                   <span
                     class="text-sm text-muted-foreground"
@@ -1279,11 +1279,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                     >
                       SAVVBI
                     </h3>
-                    <p
+                    <div
                       class="text-base font-medium text-foreground mt-1"
                     >
                       Senior Data Engineer
-                    </p>
+                    </div>
                   </div>
                   <span
                     class="text-sm text-muted-foreground"
@@ -1381,11 +1381,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                     >
                       VIVBI
                     </h3>
-                    <p
+                    <div
                       class="text-base font-medium text-foreground mt-1"
                     >
                       Senior Data Engineer
-                    </p>
+                    </div>
                   </div>
                   <span
                     class="text-sm text-muted-foreground"
@@ -1524,11 +1524,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   paged-list
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Developed and published an open-source Python package for efficient pagination
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1597,11 +1597,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   Real-Time Analytics Pipeline
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Designed and deployed enterprise streaming architecture
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1682,11 +1682,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   Multi-Source Data Platform
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Architected and built FastAPI-based integration platform
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1767,11 +1767,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   Technical Blog
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Share insights on data engineering best practices
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1840,11 +1840,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   Enterprise Data Sync
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Implemented robust ETL pipeline for retail systems
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -1913,11 +1913,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 >
                   Technical Skills
                 </h3>
-                <p
+                <div
                   class="text-muted-foreground text-sm"
                 >
                   Comprehensive overview of my technical expertise
-                </p>
+                </div>
               </div>
               <div
                 class="p-6 pt-0 space-y-4"
@@ -2007,7 +2007,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                   >
                     Bachelor of Science in Economics
                   </h3>
-                  <p
+                  <div
                     class="text-muted-foreground text-base mt-2 space-y-1"
                   >
                     <div
@@ -2023,7 +2023,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                     >
                       Minor in Business
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3833,11 +3833,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Core Languages
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Python, SQL, JavaScript, Java, Bash, R
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3856,11 +3856,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Web Frameworks
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     FastAPI, Flask, Django, Express.js
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3879,11 +3879,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Data Processing
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Pandas, NumPy, PySpark, Dask, Polars
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3920,11 +3920,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Cloud Data Warehouses
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Snowflake, BigQuery, Redshift, Azure Synapse
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3943,11 +3943,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Databases
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     PostgreSQL, MySQL, SQL Server, MongoDB, DynamoDB, Redis
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3966,11 +3966,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Streaming Platforms
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Apache Kafka, AWS Kinesis, Azure Event Hubs, Apache Pulsar
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -3989,11 +3989,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Processing Engines
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Apache Flink, Apache Spark, Apache Beam, Databricks
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4030,11 +4030,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     AWS Services
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Lambda, S3, ECS, Fargate, ECR, EC2, Kinesis, Glue, Athena, RDS
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4053,11 +4053,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Azure Services
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     App Service, AKS, Event Hubs, Azure ML, Data Factory, Functions
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4076,11 +4076,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Containerization
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Docker, Kubernetes, Helm, Docker Compose
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4099,11 +4099,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     CI/CD & IaC
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     GitHub Actions, Azure DevOps, Terraform, CloudFormation, Ansible
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4140,11 +4140,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Orchestration & Workflow
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Apache Airflow, Prefect, Dagster, Luigi, Argo Workflows
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4163,11 +4163,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Data Transformation
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     dbt, Apache NiFi, Talend, Apache Hop
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4186,11 +4186,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     API Integrations
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Facebook Ads, Google Ads, HubSpot, Salesforce, Stripe, Twilio
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4209,11 +4209,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Visualization & BI
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Metabase, Tableau, Looker, Power BI, Grafana, Plotly, D3.js
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4232,11 +4232,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Monitoring & Observability
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     DataDog, CloudWatch, Prometheus, ELK Stack, New Relic
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4255,11 +4255,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Data Formats
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Parquet, Avro, ORC, Protocol Buffers, JSON, CSV, XML
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4296,11 +4296,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     LLM Fine-Tuning & Training
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     LoRA, QLoRA, PEFT, Hugging Face Transformers
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4319,11 +4319,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     AI Agent Creation
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     LangGraph, CrewAI, AutoGen
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4342,11 +4342,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     AI Implementation in Production
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Production-ready AI systems at scale
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4365,11 +4365,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     AI Data Analysis
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     LLM-powered analytics pipelines
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4388,11 +4388,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     AI Data Governance
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Model monitoring, bias detection, responsible AI
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4429,11 +4429,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Focus Areas
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Real-time Analytics, Cost Optimization, Performance Tuning
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
@@ -4452,11 +4452,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                   >
                     Industry Expertise
                   </h3>
-                  <p
+                  <div
                     class="text-sm text-muted-foreground"
                   >
                     Entertainment, E-commerce, Marketing Analytics, SaaS
-                  </p>
+                  </div>
                 </div>
                 <div
                   class="p-6 pt-0 text-sm text-muted-foreground"
