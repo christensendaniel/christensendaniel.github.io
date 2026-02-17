@@ -41,6 +41,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://christensendaniel.com/blog/2025-10-11-dependabot-ai-code-security-github-actions/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://christensendaniel.com/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
