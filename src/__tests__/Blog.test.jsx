@@ -14,8 +14,9 @@ describe('Blog component', () => {
   test('renders blog posts', () => {
     renderWithRouter(<Blog />)
     
-    // Check for blog post
+    // Check for blog posts
     expect(screen.getByText(/Hello World: Building Scalable Data Pipelines/i)).toBeInTheDocument()
+    expect(screen.getByText(/Training My Own LLM Part 1: Why I Did It and What I Was Getting Into/i)).toBeInTheDocument()
   })
 
   test('renders read more link', () => {
