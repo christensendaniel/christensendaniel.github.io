@@ -8,13 +8,23 @@ function Footer() {
           <p className="text-sm text-muted-foreground" data-testid="copyright-text">
             © {new Date().getFullYear()} Daniel Christensen
           </p>
-          <a 
-            href="https://github.com/christensendaniel/christensendaniel.github.io" 
-            className="text-sm text-muted-foreground hover:text-primary transition-colors"
-            data-testid="github-link"
-          >
-            View on GitHub
-          </a>
+          <div className="flex items-center gap-4">
+            <a 
+              href="mailto:contact@christensendaniel.com"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="email-link"
+            >
+              contact@christensendaniel.com
+            </a>
+            <span className="text-muted-foreground">•</span>
+            <a 
+              href="https://github.com/christensendaniel/christensendaniel.github.io" 
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="github-link"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>

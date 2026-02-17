@@ -60,10 +60,10 @@ function Home() {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <Button asChild size="lg">
-                <a href="#contact">Get In Touch</a>
+                <a href="mailto:contact@christensendaniel.com">Get In Touch</a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="#projects">View Projects</a>
+                <Link to="/portfolio">View Projects</Link>
               </Button>
             </div>
           </div>
