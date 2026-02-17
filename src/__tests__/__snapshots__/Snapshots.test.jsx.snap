@@ -489,7 +489,9 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
             class="text-sm text-muted-foreground"
             data-testid="copyright-text"
           >
-            © 2025 Daniel Christensen
+            © 
+            2026
+             Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -2477,7 +2479,9 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             class="text-sm text-muted-foreground"
             data-testid="copyright-text"
           >
-            © 2025 Daniel Christensen
+            © 
+            2026
+             Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -3579,7 +3583,9 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
             class="text-sm text-muted-foreground"
             data-testid="copyright-text"
           >
-            © 2025 Daniel Christensen
+            © 
+            2026
+             Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -4471,7 +4477,9 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
             class="text-sm text-muted-foreground"
             data-testid="copyright-text"
           >
-            © 2025 Daniel Christensen
+            © 
+            2026
+             Daniel Christensen
           </p>
           <a
             class="text-sm text-muted-foreground hover:text-primary transition-colors"

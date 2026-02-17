@@ -36,8 +36,9 @@ describe('Footer component', () => {
   test('renders footer content', () => {
     render(<Footer />)
     
-    // Check for copyright
-    expect(screen.getByText(/© 2025 Daniel Christensen/i)).toBeInTheDocument()
+    // Check for copyright with current year
+    const currentYear = new Date().getFullYear()
+    expect(screen.getByText(new RegExp(`© ${currentYear} Daniel Christensen`, 'i'))).toBeInTheDocument()
   })
 
   test('renders GitHub link', () => {
