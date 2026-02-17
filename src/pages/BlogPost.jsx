@@ -12,6 +12,93 @@ function BlogPost() {
   // Blog post content - hardcoded for simplicity and performance
   // To add new posts: add to this object and update Blog.jsx list
   const posts = {
+    '2025-09-06-training-llm-part-1-motivation-and-architecture': {
+      title: 'Training My Own LLM Part 1: Why I Did It and What I Was Getting Into',
+      author: 'Daniel Christensen',
+      date: 'September 6, 2025',
+      dateISO: '2025-09-06',
+      tags: ['LLM', 'Machine Learning', 'GPT-2', 'Deep Learning', 'AI'],
+      excerpt: 'The motivation behind training a custom large language model from scratch, the architectural decisions that shaped the project, and the honest reality of working within consumer hardware constraints.',
+      content: `
+        <p>There is no shortage of large language models available today. GPT-4, Claude, Llama, Mistral—the list grows every few months. So why spend weeks training one from scratch on a gaming GPU?</p>
+        
+        <p>The honest answer: because I learn better hands-on. Coming from an academic background, I know that reading papers is not the same as writing the proof. I wanted to understand how these systems actually work.</p>
+        
+        <p>This is part one of a five-part series documenting that journey.</p>
+        
+        <h2 id="setting-realistic-expectations">Setting Realistic Expectations</h2>
+        
+        <p>From the outset, I established clear and deliberately modest objectives. The goal was not to compete with state-of-the-art models. It was to build a functional, locally-deployable language model that could serve as both a learning platform and a proof of technical competency.</p>
+        
+        <p>The scope was intentionally constrained:</p>
+        
+        <ul>
+          <li><strong>Context window</strong>: 1024 tokens (versus 100K+ in modern production models)</li>
+          <li><strong>Parameter count</strong>: Millions, not billions</li>
+          <li><strong>Training data</strong>: A curated subset, not internet-scale</li>
+          <li><strong>Compute budget</strong>: One consumer GPU, not a distributed cluster</li>
+        </ul>
+        
+        <p>This was always going to be a toy model. Acknowledging that upfront made every subsequent decision cleaner.</p>
+        
+        <h2 id="why-gpt-2">Why GPT-2?</h2>
+        
+        <p>I researched other models, but the underlying data was readily available for GPT-2, and I could follow the general understanding shared by others online.</p>
+        
+        <p>Larger models like GPT-3 and GPT-4 would require a small datacenter's worth of GPUs. More complex architectures would have doubled memory requirements or demanded multiple machines working in parallel.</p>
+        
+        <p>GPT-2 Small hit the only sweet spot that actually mattered: it was possible to build on my hardware. Its 124 million parameters fit in memory alongside everything needed to train it. It is also battle-tested, with extensive documentation, working examples, and a community that has already debugged the problems I would inevitably face.</p>
+        
+        <h2 id="understanding-the-architecture-by-building-it">Understanding the Architecture by Building It</h2>
+        
+        <h3 id="self-attention-finally-made-sense">Self-Attention Finally Made Sense</h3>
+        
+        <p>The formula <code>Attention(Q,K,V) = softmax(QK^T/√d_k)V</code> had appeared in dozens of papers I had read. It became concrete only when I had to implement it. Watching tensors flow through attention heads during debugging gave me an intuitive grasp of how the model learns to relate different parts of the input sequence.</p>
+        
+        <p>It also helped me understand why a GPU is much faster and preferred for training.</p>
+        
+        <p>GPT-2 Small uses 12 attention heads with 768-dimensional hidden states. During implementation, the quadratic complexity O(n²) with respect to sequence length stopped being an abstract concern and became a practical one. Doubling the context window quadruples memory requirements. On an RTX 4080 with 16GB VRAM, that constraint became real very quickly.</p>
+        
+        <h3 id="the-embedding-layer-surprise">The Embedding Layer Surprise</h3>
+        
+        <p>My first genuine insight came from the embedding layer. Nearly a third of GPT-2's entire capacity is dedicated to understanding individual words and tokens before any actual reasoning happens. The model needs a massive built-in dictionary just to translate human language into something it can work with. This seemed excessive until I understood the implication: if the model cannot richly represent each token, nothing that follows matters.</p>
+        
+        <h3 id="positional-encoding-and-the-simultaneity-problem">Positional Encoding and the Simultaneity Problem</h3>
+        
+        <p>The second breakthrough was positional encoding. GPT does not read a sentence sequentially the way humans do. It sees the entire input at once—every token simultaneously. This creates an immediate problem: without position information, "The cat chased the dog" and "The dog chased the cat" would appear identical.</p>
+        
+        <p>The solution is elegant: the model learns what "being the first token" or "being the hundredth token" actually means through training. It is not hardcoded. The model figures out on its own that early tokens often set context, and that nearby tokens tend to relate more closely. This is completely invisible when chatting with a production model, but it is foundational to why these systems work at all.</p>
+        
+        <h2 id="working-within-hardware-limits">Working Within Hardware Limits</h2>
+        
+        <p>The RTX 4080 with 16GB VRAM was the limiting factor in every architectural decision. Here is the concrete reality of training on consumer hardware:</p>
+        
+        <ul>
+          <li><strong>Model weights</strong>: 124M parameters × 4 bytes (FP32) ≈ 500MB</li>
+          <li><strong>Optimizer states</strong>: Adam requires 2× model size for momentum and variance ≈ 1GB</li>
+          <li><strong>Activations and gradients</strong>: With batch size 4, I was constantly monitoring memory usage</li>
+        </ul>
+        
+        <p>I implemented gradient checkpointing not as a strategic optimization but because I had to. Without it, I could only fit a batch size of 1, which made training unstable. (And I needed to be able to pause the training when it was time to use my gaming computer for what I purchased it for.) The technique recomputes activations during backpropagation instead of storing them.</p>
+        
+        <h3 id="what-the-scaling-laws-papers-do-not-emphasize">What the Scaling Laws Papers Do Not Emphasize</h3>
+        
+        <p>The most humbling realization: my RTX 4080 achieved approximately 45 tokens per second during inference—roughly 1/100th the speed of commercial APIs. That single comparison drove home the infrastructure gap between hobbyist experiments and production systems.</p>
+        
+        <h2 id="what-comes-next">What Comes Next</h2>
+        
+        <p>Part 2 covers dataset engineering: why OpenWebText was the right choice, what tokenization looks like at scale, and what it feels like to watch all 28 CPU cores hit 100% utilization for the first time.</p>
+        
+        <p><em>This is part 1 of a 5-part series. Read the full series:</em></p>
+        <ul>
+          <li><em>Part 1: Motivation and Architecture (this post)</em></li>
+          <li><em>Part 2: Dataset Engineering</em></li>
+          <li><em>Part 3: Model Implementation</em></li>
+          <li><em>Part 4: The Training Experience</em></li>
+          <li><em>Part 5: Evaluation, Deployment, and Lessons Learned</em></li>
+        </ul>
+      `
+    },
     '2025-08-31-hello-world': {
       title: 'Hello World: Building Scalable Data Pipelines',
       author: 'Daniel B. Christensen',

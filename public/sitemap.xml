@@ -36,6 +36,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://christensendaniel.com/blog/2025-09-06-training-llm-part-1-motivation-and-architecture/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://christensendaniel.com/blog/2025-08-31-hello-world/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

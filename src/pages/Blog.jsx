@@ -26,6 +26,13 @@ function Blog() {
       tags: ['AI', 'GitHub Pages', 'React', 'GitHub Actions', 'Copilot']
     },
     {
+      id: '2025-09-06-training-llm-part-1-motivation-and-architecture',
+      title: 'Training My Own LLM Part 1: Why I Did It and What I Was Getting Into',
+      date: 'September 6, 2025',
+      description: 'The motivation behind training a custom large language model from scratch, the architectural decisions that shaped the project, and the honest reality of working within consumer hardware constraints.',
+      tags: ['LLM', 'Machine Learning', 'GPT-2', 'Deep Learning', 'AI']
+    },
+    {
       id: '2025-08-31-hello-world',
       title: 'Hello World: Building Scalable Data Pipelines',
       date: 'August 31, 2025',

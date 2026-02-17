@@ -20,6 +20,7 @@ const staticPages = [
 // Blog posts with their priorities and change frequencies
 const blogPosts = [
   { path: '/blog/2026-02-17-building-portfolio-site-ai-github-pages/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-09-06-training-llm-part-1-motivation-and-architecture/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2025-08-31-hello-world/', priority: '0.8', changefreq: 'monthly' },
 ];
 

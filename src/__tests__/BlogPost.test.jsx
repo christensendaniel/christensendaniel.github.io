@@ -76,4 +76,23 @@ describe('BlogPost component', () => {
     // Should show "Post not found" message
     expect(screen.getByText(/Post not found/i)).toBeInTheDocument()
   })
+
+  test('renders LLM training blog post', () => {
+    renderWithHelmet(
+      <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-09-06-training-llm-part-1-motivation-and-architecture']}>
+        <Routes>
+          <Route path="/blog/:postId" element={<BlogPost />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    
+    // Check for blog post title
+    expect(screen.getByText(/Training My Own LLM Part 1: Why I Did It and What I Was Getting Into/i)).toBeInTheDocument()
+    
+    // Check for author (using getAllByText since name appears multiple times in nav/footer)
+    const authorElements = screen.getAllByText(/Daniel Christensen/i)
+    expect(authorElements.length).toBeGreaterThan(0)
+    
+    expect(screen.getByText(/September 6, 2025/i)).toBeInTheDocument()
+  })
 })
