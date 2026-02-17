@@ -9,7 +9,8 @@ import { ArrowLeft } from 'lucide-react'
 function BlogPost() {
   const { postId } = useParams()
 
-  // Blog post content - in a real app, this would come from a CMS or API
+  // Blog post content - hardcoded for simplicity and performance
+  // To add new posts: add to this object and update Blog.jsx list
   const posts = {
     '2025-08-31-hello-world': {
       title: 'Hello World: Building Scalable Data Pipelines',

@@ -11,7 +11,7 @@ A modern, performant portfolio website built with React and deployed on GitHub P
 ### Frontend Framework
 - **React 18.3.x** - Modern React with hooks and concurrent features
 - **Vite 6.x** - Fast build tool with excellent DX and HMR
-- **React Router 6.x** - Client-side routing with HashRouter for GitHub Pages
+- **React Router 6.x** - Client-side routing with BrowserRouter and 404.html fallback
 
 ### UI & Styling
 - **Tailwind CSS 3.4.x** - Utility-first CSS framework
@@ -94,13 +94,17 @@ christensendaniel.github.io/
 
 ## Design Decisions
 
-### Why HashRouter?
+### Why BrowserRouter?
 
-Using `HashRouter` instead of `BrowserRouter` because:
-- ✅ Works seamlessly with GitHub Pages static hosting
-- ✅ No server-side configuration needed
-- ✅ No 404 errors on direct page access
-- ✅ Clean URLs with hash fragments (e.g., `/#/skills`)
+Using `BrowserRouter` instead of `HashRouter` for:
+- ✅ Clean, professional URLs without hash fragments (`/skills` not `/#/skills`)
+- ✅ Better SEO - search engines prefer clean URLs
+- ✅ Improved user experience - shareable, bookmarkable links
+- ✅ Modern SPA routing standard
+- ✅ GitHub Pages compatibility via `public/404.html` redirect hack
+
+**GitHub Pages SPA Routing:**
+The `public/404.html` file redirects all unknown routes back to `index.html` with the path preserved as a query parameter, which is then restored by JavaScript in the main HTML file. This enables BrowserRouter to work on GitHub Pages without server-side configuration.
 
 ### Why Vite?
 
