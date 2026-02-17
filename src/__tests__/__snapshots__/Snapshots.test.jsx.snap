@@ -59,6 +59,12 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
               >
                 Blog
               </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/contact"
+              >
+                Contact
+              </a>
             </div>
           </div>
           <div
@@ -581,6 +587,12 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 href="/blog"
               >
                 Blog
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/contact"
+              >
+                Contact
               </a>
             </div>
           </div>
@@ -2588,6 +2600,12 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
               >
                 Blog
               </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/contact"
+              >
+                Contact
+              </a>
             </div>
           </div>
           <div
@@ -3641,6 +3659,12 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                 href="/blog"
               >
                 Blog
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/contact"
+              >
+                Contact
               </a>
             </div>
           </div>
