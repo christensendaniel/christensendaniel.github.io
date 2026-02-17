@@ -19,6 +19,13 @@ function Blog() {
 
   const blogPosts = [
     {
+      id: '2026-02-17-building-portfolio-site-ai-github-pages',
+      title: 'Building a Modern Portfolio Site with AI: From Static HTML to React',
+      date: 'February 17, 2026',
+      description: 'How I used GitHub Pages, automated deployments, and AI-assisted development to transform a static HTML site into a modern React portfolio without writing every line myself.',
+      tags: ['AI', 'GitHub Pages', 'React', 'GitHub Actions', 'Copilot']
+    },
+    {
       id: '2025-08-31-hello-world',
       title: 'Hello World: Building Scalable Data Pipelines',
       date: 'August 31, 2025',

@@ -17,9 +17,16 @@ const staticPages = [
   { path: '/sitemap/', priority: '0.5', changefreq: 'monthly' },
 ];
 
+// Blog posts with their priorities and change frequencies
+const blogPosts = [
+  { path: '/blog/2026-02-17-building-portfolio-site-ai-github-pages/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-08-31-hello-world/', priority: '0.8', changefreq: 'monthly' },
+];
+
 // Function to generate sitemap XML
 function generateSitemap() {
-  const urls = staticPages.map(page => `  <url>
+  const allPages = [...staticPages, ...blogPosts];
+  const urls = allPages.map(page => `  <url>
     <loc>${baseUrl}${page.path}</loc>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
@@ -48,6 +55,7 @@ fs.writeFileSync(sitemapPath, sitemap, 'utf8');
 
 console.log('✅ Sitemap generated successfully at:', sitemapPath);
 console.log('📄 Sitemap includes:');
-staticPages.forEach(page => {
+const allPages = [...staticPages, ...blogPosts];
+allPages.forEach(page => {
   console.log(`   - ${baseUrl}${page.path}`);
 });

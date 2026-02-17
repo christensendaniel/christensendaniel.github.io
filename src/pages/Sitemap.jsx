@@ -47,6 +47,11 @@ function Sitemap() {
 
   const blogPosts = [
     {
+      title: "Building a Modern Portfolio Site with AI: From Static HTML to React",
+      path: "/blog/2026-02-17-building-portfolio-site-ai-github-pages",
+      description: "How I used GitHub Pages, automated deployments, and AI-assisted development to transform a static HTML site into a modern React portfolio"
+    },
+    {
       title: "Hello World: Building Scalable Data Pipelines",
       path: "/blog/2025-08-31-hello-world",
       description: "An introduction to building enterprise-scale data pipelines at Disney and beyond"
