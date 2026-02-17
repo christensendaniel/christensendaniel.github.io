@@ -33,6 +33,9 @@ function Navigation({ isDarkMode, onThemeToggle }) {
                 <Link to="/#projects" data-testid="nav-link-projects">Projects</Link>
               </Button>
               <Button variant="ghost" asChild size="sm">
+                <Link to="/portfolio/data-engineering" data-testid="nav-link-portfolio">Portfolio</Link>
+              </Button>
+              <Button variant="ghost" asChild size="sm">
                 <Link to="/blog" data-testid="nav-link-blog">Blog</Link>
               </Button>
               <Button variant="ghost" asChild size="sm">
