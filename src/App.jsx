@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { routerFutureFlags } from './constants/router'
+import { ScrollToTop } from './components/ScrollToTop'
 import Home from './pages/Home'
 
 // Lazy load pages for better performance
@@ -24,6 +25,7 @@ const LoadingFallback = () => (
 function App() {
   return (
     <Router future={routerFutureFlags}>
+      <ScrollToTop />
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
