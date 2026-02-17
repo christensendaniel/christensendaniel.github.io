@@ -15,7 +15,7 @@ The site projects a strong professional image with clean design, substantive con
 
 ## High Priority Suggestions
 
-###  3. Add Professional Photo/Avatar
+### 3. Add Professional Photo/Avatar
 **Priority:** High  
 **Current State:** No visual representation of Daniel on the site.  
 **Suggested Improvement:**
