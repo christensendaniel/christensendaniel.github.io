@@ -1,13 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import SEO, { StructuredData } from '../components/SEO'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Mail, Linkedin, Github, Package, FileText } from 'lucide-react'
 
 function Home() {
+  // Structured data for the person schema
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Daniel Christensen",
+    "url": "https://christensendaniel.com",
+    "jobTitle": "Full Stack Data Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Walt Disney Company"
+    },
+    "knowsAbout": [
+      "Data Engineering", "LLM Integration", "AI Agents",
+      "Python", "Snowflake", "AWS", "Apache Kafka", "dbt",
+      "Apache Flink", "Real-time Analytics", "ETL", "Streaming Data"
+    ],
+    "sameAs": [
+      "https://github.com/christensendaniel"
+    ]
+  }
+
   return (
     <Layout>
+      <SEO
+        title="Full Stack Data Engineer"
+        description="Daniel Christensen - Full Stack Data Engineer specializing in data pipelines, LLM integration, AI agents, and cloud architecture. 7+ years Python, Snowflake, AWS, Azure."
+        canonical="/"
+        keywords="data engineer, LLM integration, AI agents, Python, Snowflake, AWS, Azure, data pipelines, ETL, Apache Flink, real-time analytics"
+      />
+      <StructuredData data={personSchema} />
       <header className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">

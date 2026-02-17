@@ -1,10 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import SEO, { StructuredData } from '../components/SEO'
 
 function Portfolio() {
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://christensendaniel.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://christensendaniel.com/portfolio/" }
+    ]
+  }
+
   return (
     <Layout showNavigation={false}>
+      <SEO
+        title="Portfolio - Data Engineering Projects"
+        description="Showcase of data engineering projects, case studies, and technical achievements. Enterprise-scale solutions with proven results."
+        canonical="/portfolio/"
+        keywords="data engineering portfolio, case studies, technical projects, enterprise solutions, data pipelines, cloud architecture"
+      />
+      <StructuredData data={breadcrumbSchema} />
       <header className="portfolio-header">
         <div className="container">
           <h1 className="portfolio-title">Data Engineering Portfolio</h1>

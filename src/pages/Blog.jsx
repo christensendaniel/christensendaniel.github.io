@@ -1,11 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import SEO, { StructuredData } from '../components/SEO'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 
 function Blog() {
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://christensendaniel.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://christensendaniel.com/blog/" }
+    ]
+  }
+
   const blogPosts = [
     {
       id: '2025-08-31-hello-world',
@@ -18,6 +29,13 @@ function Blog() {
 
   return (
     <Layout>
+      <SEO
+        title="Blog - Data Engineering & AI Insights"
+        description="Articles on data engineering, LLM integration, AI agents, Python best practices, and cloud architecture by Daniel Christensen."
+        canonical="/blog/"
+        keywords="data engineering blog, LLM tutorial, AI agents, Python data engineering, Apache Flink, Snowflake tutorials"
+      />
+      <StructuredData data={breadcrumbSchema} />
       <header className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <Button variant="ghost" asChild className="mb-6">

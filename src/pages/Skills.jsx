@@ -1,13 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
+import SEO, { StructuredData } from '../components/SEO';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 
 function Skills() {
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://christensendaniel.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Skills", "item": "https://christensendaniel.com/skills/" }
+    ]
+  }
+
   return (
     <Layout>
+      <SEO
+        title="Technical Skills - Data Engineering, AI & LLM"
+        description="Comprehensive technical skills in data engineering, AI/ML, LLM fine-tuning, PydanticAI, RAG systems, cloud platforms, and data validation frameworks."
+        canonical="/skills/"
+        keywords="data engineering skills, LLM fine-tuning, PydanticAI, RAG architecture, Snowflake, Apache Kafka, dbt, Airflow, Python, AWS, Azure"
+      />
+      <StructuredData data={breadcrumbSchema} />
       <header className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-12 md:py-16">
         <div className="container mx-auto px-4">
           <Button variant="ghost" asChild className="mb-6">
