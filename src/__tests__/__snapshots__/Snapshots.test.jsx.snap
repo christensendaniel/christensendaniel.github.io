@@ -493,13 +493,29 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
             2026
              Daniel Christensen
           </p>
-          <a
-            class="text-sm text-muted-foreground hover:text-primary transition-colors"
-            data-testid="github-link"
-            href="https://github.com/christensendaniel/christensendaniel.github.io"
+          <div
+            class="flex items-center gap-4"
           >
-            View on GitHub
-          </a>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="email-link"
+              href="mailto:contact@christensendaniel.com"
+            >
+              contact@christensendaniel.com
+            </a>
+            <span
+              class="text-muted-foreground"
+            >
+              •
+            </span>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="github-link"
+              href="https://github.com/christensendaniel/christensendaniel.github.io"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -710,13 +726,13 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8"
-                href="#contact"
+                href="mailto:contact@christensendaniel.com"
               >
                 Get In Touch
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
-                href="#projects"
+                href="/portfolio"
               >
                 View Projects
               </a>
@@ -2483,13 +2499,29 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             2026
              Daniel Christensen
           </p>
-          <a
-            class="text-sm text-muted-foreground hover:text-primary transition-colors"
-            data-testid="github-link"
-            href="https://github.com/christensendaniel/christensendaniel.github.io"
+          <div
+            class="flex items-center gap-4"
           >
-            View on GitHub
-          </a>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="email-link"
+              href="mailto:contact@christensendaniel.com"
+            >
+              contact@christensendaniel.com
+            </a>
+            <span
+              class="text-muted-foreground"
+            >
+              •
+            </span>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="github-link"
+              href="https://github.com/christensendaniel/christensendaniel.github.io"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -3154,72 +3186,6 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
           </div>
         </section>
         <section
-          class="py-12 md:py-16"
-          id="technical"
-        >
-          <div
-            class="container mx-auto px-4"
-          >
-            <h2
-              class="text-3xl font-bold mb-12 text-center"
-            >
-              Technical Deep Dives
-            </h2>
-            <div
-              class="max-w-4xl mx-auto"
-            >
-              <div
-                class="rounded-lg border bg-card text-card-foreground shadow-sm"
-              >
-                <div
-                  class="p-6 pt-6"
-                >
-                  <ul
-                    class="space-y-3 text-muted-foreground"
-                  >
-                    <li
-                      class="flex items-baseline gap-2"
-                    >
-                      <strong
-                        class="text-foreground"
-                      >
-                        Pipeline Architecture Patterns:
-                      </strong>
-                      <em>
-                        Coming soon
-                      </em>
-                    </li>
-                    <li
-                      class="flex items-baseline gap-2"
-                    >
-                      <strong
-                        class="text-foreground"
-                      >
-                        Cost Optimization Strategies:
-                      </strong>
-                      <em>
-                        Coming soon
-                      </em>
-                    </li>
-                    <li
-                      class="flex items-baseline gap-2"
-                    >
-                      <strong
-                        class="text-foreground"
-                      >
-                        Data Quality Framework:
-                      </strong>
-                      <em>
-                        Coming soon
-                      </em>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
           class="py-12 md:py-16 bg-muted/50"
           id="open-source"
         >
@@ -3587,13 +3553,29 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
             2026
              Daniel Christensen
           </p>
-          <a
-            class="text-sm text-muted-foreground hover:text-primary transition-colors"
-            data-testid="github-link"
-            href="https://github.com/christensendaniel/christensendaniel.github.io"
+          <div
+            class="flex items-center gap-4"
           >
-            View on GitHub
-          </a>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="email-link"
+              href="mailto:contact@christensendaniel.com"
+            >
+              contact@christensendaniel.com
+            </a>
+            <span
+              class="text-muted-foreground"
+            >
+              •
+            </span>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="github-link"
+              href="https://github.com/christensendaniel/christensendaniel.github.io"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -4481,13 +4463,29 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
             2026
              Daniel Christensen
           </p>
-          <a
-            class="text-sm text-muted-foreground hover:text-primary transition-colors"
-            data-testid="github-link"
-            href="https://github.com/christensendaniel/christensendaniel.github.io"
+          <div
+            class="flex items-center gap-4"
           >
-            View on GitHub
-          </a>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="email-link"
+              href="mailto:contact@christensendaniel.com"
+            >
+              contact@christensendaniel.com
+            </a>
+            <span
+              class="text-muted-foreground"
+            >
+              •
+            </span>
+            <a
+              class="text-sm text-muted-foreground hover:text-primary transition-colors"
+              data-testid="github-link"
+              href="https://github.com/christensendaniel/christensendaniel.github.io"
+            >
+              View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>

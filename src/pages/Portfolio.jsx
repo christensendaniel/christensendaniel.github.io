@@ -212,33 +212,6 @@ function Portfolio() {
           </div>
         </section>
 
-        {/* Technical Deep Dives Section */}
-        <section id="technical" className="py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Technical Deep Dives</h2>
-            <div className="max-w-4xl mx-auto">
-              <Card>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li className="flex items-baseline gap-2">
-                      <strong className="text-foreground">Pipeline Architecture Patterns:</strong>
-                      <em>Coming soon</em>
-                    </li>
-                    <li className="flex items-baseline gap-2">
-                      <strong className="text-foreground">Cost Optimization Strategies:</strong>
-                      <em>Coming soon</em>
-                    </li>
-                    <li className="flex items-baseline gap-2">
-                      <strong className="text-foreground">Data Quality Framework:</strong>
-                      <em>Coming soon</em>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Open Source Section */}
         <section id="open-source" className="py-12 md:py-16 bg-muted/50">
           <div className="container mx-auto px-4">
