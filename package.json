@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.574.0",
     "react": "^19.2.4",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.4",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.28.0",
     "tailwind-merge": "^3.4.1"
@@ -35,7 +35,7 @@
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.2.14",
-    "@types/react-dom": "^18.3.5",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.24",
     "babel-jest": "^30.2.0",
