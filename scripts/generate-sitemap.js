@@ -55,7 +55,6 @@ fs.writeFileSync(sitemapPath, sitemap, 'utf8');
 
 console.log('✅ Sitemap generated successfully at:', sitemapPath);
 console.log('📄 Sitemap includes:');
-const allPages = [...staticPages, ...blogPosts];
-allPages.forEach(page => {
+[...staticPages, ...blogPosts].forEach(page => {
   console.log(`   - ${baseUrl}${page.path}`);
 });
