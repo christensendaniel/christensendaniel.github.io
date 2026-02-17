@@ -20,6 +20,10 @@ const staticPages = [
 // Blog posts with their priorities and change frequencies
 const blogPosts = [
   { path: '/blog/2026-02-17-building-portfolio-site-ai-github-pages/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-09-27-training-llm-part-4-the-training-experience/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-09-20-training-llm-part-3-implementation-and-training-loop/', priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/2025-09-13-training-llm-part-2-dataset-engineering/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2025-09-06-training-llm-part-1-motivation-and-architecture/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2025-08-31-hello-world/', priority: '0.8', changefreq: 'monthly' },
 ];
