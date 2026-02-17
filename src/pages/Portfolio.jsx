@@ -273,8 +273,9 @@ function Portfolio() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
                       >
-                        <ExternalLink className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
                         View on PyPI
+                        <span className="sr-only">(opens in new tab)</span>
                       </a>
                     </Button>
                     <Button asChild variant="outline">
@@ -284,8 +285,9 @@ function Portfolio() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
                       >
-                        <Github className="h-4 w-4" />
+                        <Github className="h-4 w-4" aria-hidden="true" />
                         GitHub Repository
+                        <span className="sr-only">(opens in new tab)</span>
                       </a>
                     </Button>
                   </div>

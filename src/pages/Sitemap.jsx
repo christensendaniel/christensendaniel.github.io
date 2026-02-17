@@ -186,6 +186,7 @@ function Sitemap() {
                     className="text-sm text-primary hover:underline"
                   >
                     christensendaniel.com/sitemap.xml
+                    <span className="sr-only">(opens in new tab)</span>
                   </a>
                 </CardContent>
               </Card>

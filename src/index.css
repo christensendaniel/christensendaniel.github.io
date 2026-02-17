@@ -75,6 +75,30 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
+  /* Screen reader only utility - hides content visually but keeps it accessible to screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Ensure visible focus indicators for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+  
+  /* Enhanced focus for dark mode */
+  .dark *:focus-visible {
+    outline-color: hsl(var(--primary));
+  }
+  
   /* Custom prose styles for blog content */
   .prose h2 {
     @apply text-2xl font-bold mt-8 mb-4;
