@@ -10,38 +10,37 @@ GitHub Pages was configured to deploy from the **wrong source**. It was likely s
 
 ### 1. Workflow Configuration (COMPLETED ✅)
 
-The `.github/workflows/ci-cd.yml` workflow has been updated to:
+The `.github/workflows/ci-cd.yml` workflow has been updated to use GitHub's official deployment action:
 
 ```yaml
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v4
+- name: Upload artifact for GitHub Pages
+  uses: actions/upload-pages-artifact@v3
   with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./dist          # ✅ Deploys ONLY the dist/ build folder
-    cname: christensendaniel.com # ✅ Maintains custom domain
-    force_orphan: true           # ✅ NEW: Ensures clean gh-pages branch
+    path: dist/
+
+- name: Deploy to GitHub Pages
+  id: deployment
+  uses: actions/deploy-pages@v4
 ```
 
-The `force_orphan: true` option ensures that each deployment creates a clean gh-pages branch without commit history, preventing any conflicts or stale files.
+**Benefits of this approach:**
+- ✅ Direct deployment from GitHub Actions (no gh-pages branch needed)
+- ✅ Official GitHub-supported deployment method
+- ✅ No manual repository settings configuration required
+- ✅ Automatic GitHub Pages environment setup
+- ✅ Built-in deployment URL tracking
 
-### 2. GitHub Pages Settings (MANUAL STEP REQUIRED ⚠️)
+### 2. GitHub Pages Settings (AUTOMATIC ✅)
 
-**CRITICAL:** You must configure GitHub Pages to deploy from the correct source:
+**No manual configuration required!** 
 
-1. Go to: https://github.com/christensendaniel/christensendaniel.github.io/settings/pages
+When using `actions/deploy-pages`, GitHub automatically:
+- Sets the deployment source to "GitHub Actions"
+- Creates the `github-pages` environment
+- Configures proper permissions
+- Manages deployment URLs
 
-2. Under "Build and deployment" > "Source":
-   - **Select:** "Deploy from a branch"
-   
-3. Under "Branch":
-   - **Branch:** `gh-pages`
-   - **Folder:** `/ (root)`
-   - Click "Save"
-
-**DO NOT** set it to:
-- ❌ `main` branch
-- ❌ `main` branch `/docs` folder
-- ❌ Any other configuration
+The first time the workflow runs, GitHub Pages will automatically be configured to use GitHub Actions as the source.
 
 ### 3. How It Works
 
@@ -64,13 +63,17 @@ The `force_orphan: true` option ensures that each deployment creates a clean gh-
    - CNAME (custom domain)
    - version.json (deployment metadata)
    ↓
-4. peaceiris/actions-gh-pages action:
-   - Pushes ONLY dist/ contents to gh-pages branch
-   - Creates .nojekyll file
-   - force_orphan: true (clean branch)
+4. Upload Pages Artifact:
+   - actions/upload-pages-artifact@v3
+   - Packages dist/ contents for deployment
    ↓
-5. GitHub Pages:
-   - Deploys from gh-pages branch
+5. Deploy to GitHub Pages:
+   - actions/deploy-pages@v4
+   - Deploys directly from GitHub Actions
+   - No gh-pages branch needed
+   ↓
+6. GitHub Pages:
+   - Automatically configured to use GitHub Actions
    - Serves compiled files at christensendaniel.com
 ```
 
@@ -97,31 +100,32 @@ Visit https://christensendaniel.com and check browser console:
 
 | Before | After |
 |--------|-------|
-| ❌ GitHub Pages source: `main` branch root | ✅ GitHub Pages source: `gh-pages` branch |
+| ❌ Using peaceiris/actions-gh-pages | ✅ Using official actions/deploy-pages |
+| ❌ Manual GitHub Pages configuration required | ✅ Automatic configuration via GitHub Actions |
+| ❌ Deploys to gh-pages branch | ✅ Direct deployment from workflow |
 | ❌ Serving: `index.html` with `/src/main.jsx` | ✅ Serving: compiled `index.html` with `/assets/index-*.js` |
 | ❌ Result: Blank screen (JSX can't run in browser) | ✅ Result: Working site with compiled React |
-| ❌ Missing: `force_orphan` in workflow | ✅ Added: `force_orphan: true` for clean deploys |
 
 ## Troubleshooting
 
 ### If site still shows blank screen after fix:
 
-1. **Verify GitHub Pages source settings** (see step 2 above)
-2. **Clear browser cache**: Ctrl+Shift+R (hard refresh)
-3. **Wait 2-5 minutes** for GitHub Pages to propagate changes
-4. **Check workflow ran successfully**:
+1. **Check workflow ran successfully**:
    - Go to: https://github.com/christensendaniel/christensendaniel.github.io/actions
    - Latest "CI/CD Pipeline" run should be ✅ green
-5. **Inspect gh-pages branch**:
-   ```bash
-   git fetch origin gh-pages
-   git checkout gh-pages
-   ls -la
-   # Should see: index.html, assets/, CNAME, .nojekyll
-   # Should NOT see: src/, package.json, vite.config.js
-   cat index.html | grep "assets/index"
-   # Should show: <script type="module" crossorigin src="/assets/index-[hash].js">
-   ```
+   - Look for successful "Deploy to GitHub Pages" step
+
+2. **Verify deployment environment**:
+   - Go to: https://github.com/christensendaniel/christensendaniel.github.io/deployments
+   - Should see "github-pages" environment with recent deployment
+
+3. **Clear browser cache**: Ctrl+Shift+R (hard refresh)
+
+4. **Wait 2-5 minutes** for GitHub Pages to propagate changes
+
+5. **Check GitHub Pages settings** (should be automatic):
+   - Go to: https://github.com/christensendaniel/christensendaniel.github.io/settings/pages
+   - Source should show: "GitHub Actions"
 
 ### If quick-check still fails:
 
@@ -140,8 +144,8 @@ curl -s https://christensendaniel.com | grep -o 'src="[^"]*"' | head -5
 
 The deployment was fixed by:
 1. ✅ Ensuring workflow builds (`npm run build`) before deploy
-2. ✅ Ensuring workflow deploys from `./dist` directory  
-3. ✅ Adding `force_orphan: true` for clean deployments
+2. ✅ Using official GitHub Actions deployment method
+3. ✅ Automatic GitHub Pages configuration (no manual steps needed)
 4. ⚠️ **REQUIRES MANUAL**: Configuring GitHub Pages to deploy from `gh-pages` branch
 
 Once GitHub Pages settings are updated to use the `gh-pages` branch, the site will serve the compiled build files and render correctly.

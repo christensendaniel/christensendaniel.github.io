@@ -27,23 +27,26 @@ This served the development `index.html` which references `/src/main.jsx`.
 ### 1. Workflow Enhancement ✅
 **File**: `.github/workflows/ci-cd.yml`
 
-Added `force_orphan: true` to ensure clean deployments:
+Switched to GitHub's official deployment method:
 
 ```yaml
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v4
+- name: Upload artifact for GitHub Pages
+  uses: actions/upload-pages-artifact@v3
   with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./dist          # Already correct
-    cname: christensendaniel.com # Already correct
-    force_orphan: true           # NEW - ensures clean gh-pages branch
+    path: dist/
+
+- name: Deploy to GitHub Pages
+  id: deployment
+  uses: actions/deploy-pages@v4
 ```
 
-**Benefits of `force_orphan: true`**:
-- Creates a clean gh-pages branch with each deployment (no commit history)
-- Prevents conflicts from previous deployments
-- Ensures no stale files remain from previous builds
-- Makes deployments more reliable and deterministic
+**Benefits of this approach**:
+- ✅ Direct deployment from GitHub Actions (no gh-pages branch needed)
+- ✅ Official GitHub-supported deployment method
+- ✅ No manual repository settings configuration required
+- ✅ Automatic GitHub Pages environment setup
+- ✅ Built-in deployment URL tracking
+- ✅ Eliminates the need for third-party actions
 
 ### 2. Comprehensive Documentation ✅
 **File**: `GITHUB_PAGES_FIX.md`
@@ -65,29 +68,23 @@ Added prominent deployment section with:
 - Link to detailed troubleshooting guide
 - Clear step-by-step setup instructions
 
-## What Still Needs to Be Done (Manual)
+## What Still Needs to Be Done
 
-### GitHub Pages Repository Settings
+### ✅ No Manual Configuration Required!
 
-**Repository owner must manually configure GitHub Pages:**
+**GitHub Pages will be automatically configured** when the workflow first runs with the new deployment method.
 
-1. Navigate to: https://github.com/christensendaniel/christensendaniel.github.io/settings/pages
+The `actions/deploy-pages@v4` action automatically:
+- Sets GitHub Pages source to "GitHub Actions"
+- Creates the `github-pages` environment
+- Configures proper permissions
+- Manages deployment URLs
 
-2. Under **"Build and deployment"** section:
-   - Source: **"Deploy from a branch"**
-
-3. Under **"Branch"** section:
-   - Branch: **`gh-pages`**
-   - Folder: **`/ (root)`**
-   - Click **"Save"**
-
-### Why This Manual Step Is Required
-
-GitHub Pages source configuration is a repository setting that cannot be changed via code or workflow files. It must be manually configured through the GitHub web interface.
+**The first deployment will trigger automatic configuration.** No manual steps needed!
 
 ## Verification Steps
 
-### After Manual Configuration
+### After Deployment
 
 1. **Trigger a deployment:**
    ```bash
@@ -98,9 +95,13 @@ GitHub Pages source configuration is a repository setting that cannot be changed
    - Check: https://github.com/christensendaniel/christensendaniel.github.io/actions
    - Ensure "CI/CD Pipeline" workflow completes successfully
 
-3. **Wait 2-5 minutes** for GitHub Pages to propagate changes
+3. **Verify GitHub Pages settings (optional):**
+   - Go to: https://github.com/christensendaniel/christensendaniel.github.io/settings/pages
+   - Source should automatically show: "GitHub Actions"
 
-4. **Run verification:**
+4. **Wait 2-5 minutes** for GitHub Pages to propagate changes
+
+5. **Run verification:**
    ```bash
    npm run quick-check
    ```
@@ -171,14 +172,18 @@ GitHub Actions Workflow
     - version.json
     - CNAME
     ↓
-4. Deploy to gh-pages branch
-   (peaceiris/actions-gh-pages@v4)
-   - Pushes dist/ contents to gh-pages
-   - Creates .nojekyll
-   - force_orphan: true (clean branch)
+4. Upload Pages Artifact
+   (actions/upload-pages-artifact@v3)
+   - Packages dist/ contents for deployment
+    ↓
+5. Deploy to GitHub Pages
+   (actions/deploy-pages@v4)
+   - Deploys directly from GitHub Actions
+   - No intermediate branch needed
+   - Automatic environment configuration
     ↓
 GitHub Pages
-   - Reads from gh-pages branch
+   - Automatically configured to use GitHub Actions
    - Serves compiled files
    - Available at christensendaniel.com
 ```
@@ -220,19 +225,20 @@ This ensures:
 
 ✅ The fix is complete when:
 1. Workflow deploys from `./dist` directory ✓ (already was)
-2. `force_orphan: true` is set ✓ (added)
-3. Documentation is complete ✓ (added)
-4. GitHub Pages source is set to `gh-pages` branch (⚠️ manual step required)
+2. Workflow uses official GitHub Actions deployment ✓ (updated)
+3. Documentation is complete ✓ (updated)
+4. GitHub Pages auto-configures to "GitHub Actions" source ✓ (automatic)
 5. `npm run quick-check` passes
 6. Site displays content (no blank screen)
 7. Browser loads `/assets/index-*.js` (not `/src/main.jsx`)
 
 ## Next Actions for Repository Owner
 
-1. **Immediate**: Configure GitHub Pages source to `gh-pages` branch (see instructions above)
-2. **Verify**: Wait for next deployment and run `npm run quick-check`
-3. **Confirm**: Visit https://christensendaniel.com and verify site loads correctly
-4. **Optional**: Review deployment logs to ensure workflow succeeds
+1. **Merge this PR** to main branch
+2. **Wait for deployment**: The workflow will automatically deploy on merge
+3. **Verify**: Wait 2-5 minutes, then run `npm run quick-check`
+4. **Confirm**: Visit https://christensendaniel.com and verify site loads correctly
+5. **Optional**: Check Settings → Pages to confirm source shows "GitHub Actions"
 
 ## Support
 
