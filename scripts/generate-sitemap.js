@@ -14,6 +14,7 @@ const staticPages = [
   { path: '/portfolio/', priority: '0.9', changefreq: 'monthly' },
   { path: '/portfolio/data-engineering/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/', priority: '0.9', changefreq: 'weekly' },
+  { path: '/sitemap/', priority: '0.5', changefreq: 'monthly' },
 ];
 
 // Function to generate sitemap XML

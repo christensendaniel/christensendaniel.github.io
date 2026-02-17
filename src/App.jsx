@@ -7,6 +7,7 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Portfolio from './pages/Portfolio'
 import DataEngineeringPortfolio from './pages/DataEngineeringPortfolio'
+import Sitemap from './pages/Sitemap'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/blog/:postId" element={<BlogPost />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/data-engineering" element={<DataEngineeringPortfolio />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         {/* Redirect old URL to new React route */}
         <Route path="/portfolio/data-engineering-portfolio.html" element={<Navigate to="/portfolio/data-engineering" replace />} />
       </Routes>
