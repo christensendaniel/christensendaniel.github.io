@@ -42,6 +42,11 @@ function Sitemap() {
       title: "Blog",
       path: "/blog",
       description: "Technical blog with insights on data engineering, AI, and cloud architecture"
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+      description: "Get in touch for professional inquiries, collaboration opportunities, or consulting"
     }
   ]
 

@@ -10,6 +10,7 @@ const Blog = lazy(() => import('./pages/Blog'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
 const Portfolio = lazy(() => import('./pages/Portfolio'))
 const DataEngineeringPortfolio = lazy(() => import('./pages/DataEngineeringPortfolio'))
+const Contact = lazy(() => import('./pages/Contact'))
 const Sitemap = lazy(() => import('./pages/Sitemap'))
 
 // Loading fallback component
@@ -35,6 +36,7 @@ function App() {
           <Route path="/blog/:postId" element={<BlogPost />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/data-engineering" element={<DataEngineeringPortfolio />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/sitemap" element={<Sitemap />} />
           {/* Redirect old URL to new React route */}
           <Route path="/portfolio/data-engineering-portfolio.html" element={<Navigate to="/portfolio/data-engineering" replace />} />
