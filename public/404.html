@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current url and converts the path and query
+      // string into just a query string, and then redirects the browser
+      // to the new url with only a query string and hash fragment
+      
+      // Store the current URL
+      const path = window.location.pathname.slice(1);
+      const searchParams = window.location.search.slice(1);
+      
+      // Redirect to the root with encoded path as query parameter
+      if (path) {
+        const redirect = '/?/' + path + (searchParams ? '&' + searchParams : '') + window.location.hash;
+        window.location.replace(redirect);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

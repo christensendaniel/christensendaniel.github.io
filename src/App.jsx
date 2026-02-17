@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { routerFutureFlags } from './constants/router'
 import Home from './pages/Home'
 import Skills from './pages/Skills'

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-sitemap.js",
     "build": "vite build && node scripts/generate-version.js",
     "preview": "vite preview",
     "test": "jest",
@@ -21,6 +22,7 @@
     "lucide-react": "^0.564.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.28.0",
     "tailwind-merge": "^3.4.0"
   },

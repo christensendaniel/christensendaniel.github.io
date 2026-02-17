@@ -5,9 +5,9 @@ import Footer from './Footer'
 
 function Layout({ children, showNavigation = true }) {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Check localStorage for saved theme preference
+    // Check localStorage for saved theme preference, default to dark
     const savedTheme = localStorage.getItem('theme')
-    return savedTheme === 'dark'
+    return savedTheme ? savedTheme === 'dark' : true
   })
 
   useEffect(() => {
