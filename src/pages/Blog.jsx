@@ -26,6 +26,34 @@ function Blog() {
       tags: ['AI', 'GitHub Pages', 'React', 'GitHub Actions', 'Copilot']
     },
     {
+      id: '2025-10-04-training-llm-part-5-evaluation-deployment-conclusions',
+      title: 'Training My Own LLM Part 5: Evaluation, Deployment, and Honest Conclusions',
+      date: 'October 4, 2025',
+      description: 'How the model actually performed, what a local deployment looked like, why I stopped before fine-tuning, and the honest verdict on whether training your own LLM from scratch is worth it.',
+      tags: ['LLM', 'Machine Learning', 'Deployment', 'AI', 'Lessons Learned']
+    },
+    {
+      id: '2025-09-27-training-llm-part-4-the-training-experience',
+      title: 'Training My Own LLM Part 4: The Actual Training Experience',
+      date: 'September 27, 2025',
+      description: 'What 70 hours of GPU training actually looks like — the failures, the recoveries, the thermal throttling, and what the loss curves revealed about the gap between toy models and production systems.',
+      tags: ['LLM', 'Machine Learning', 'GPU', 'Training', 'AI']
+    },
+    {
+      id: '2025-09-20-training-llm-part-3-implementation-and-training-loop',
+      title: 'Training My Own LLM Part 3: Implementation and the Training Loop',
+      date: 'September 20, 2025',
+      description: 'The actual model configuration, memory arithmetic that dictated every decision, gradient accumulation, and the checkpoint strategy earned through repeated failures.',
+      tags: ['LLM', 'PyTorch', 'Hugging Face', 'Training', 'GPU']
+    },
+    {
+      id: '2025-09-13-training-llm-part-2-dataset-engineering',
+      title: 'Training My Own LLM Part 2: Dataset Engineering at Scale',
+      date: 'September 13, 2025',
+      description: 'How I prepared 8.2 million training examples from OpenWebText, what tokenization looks like at scale, and the data pipeline lessons learned the hard way.',
+      tags: ['LLM', 'Machine Learning', 'NLP', 'Dataset', 'Python']
+    },
+    {
       id: '2025-09-06-training-llm-part-1-motivation-and-architecture',
       title: 'Training My Own LLM Part 1: Why I Did It and What I Was Getting Into',
       date: 'September 6, 2025',
