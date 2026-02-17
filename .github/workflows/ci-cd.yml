@@ -200,29 +200,26 @@ jobs:
     needs: build-and-verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
+    # Configure deployment environment and URL
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: dist/
       
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: christensendaniel.com
-          force_orphan: true
+          path: dist/
       
-      - name: Wait for GitHub Pages deployment
-        run: |
-          echo "⏳ Waiting 60 seconds for GitHub Pages to update and propagate..."
-          sleep 60
-          echo "✅ Wait complete"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
   
   verify-deployment:
     name: Verify Deployment
