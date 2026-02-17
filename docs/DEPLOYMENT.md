@@ -53,17 +53,25 @@ base: '/project/',  // For project repos
 
 ### Router Configuration
 
-The app uses `HashRouter` from React Router, which is ideal for GitHub Pages:
+The app uses `BrowserRouter` from React Router for clean URLs:
 
 ```javascript
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 ```
 
-**Why HashRouter?**
-- ✅ No server-side routing configuration needed
-- ✅ Works perfectly with GitHub Pages static hosting
-- ✅ URLs use hash fragments (e.g., `/#/skills`)
-- ✅ No 404 errors on direct navigation
+**Why BrowserRouter?**
+- ✅ Clean, SEO-friendly URLs (e.g., `/skills` not `/#/skills`)
+- ✅ Better user experience - professional, shareable links
+- ✅ Modern SPA routing standard
+- ✅ Works with GitHub Pages via `404.html` redirect hack
+
+**GitHub Pages SPA Routing Compatibility:**
+
+Since GitHub Pages is a static host without server-side routing, we use a `public/404.html` file that redirects to `index.html` with the original path preserved. The main HTML file then restores the correct route. This allows BrowserRouter to function properly on GitHub Pages.
+
+Key files:
+- `public/404.html` - Redirects unknown routes to index.html
+- `index.html` - Contains JavaScript to restore the original path from query params
 
 ### Custom Domain
 

@@ -105,9 +105,9 @@ christensendaniel.github.io/
 
 ### Routing
 
-- Uses React Router v6 with `HashRouter` for GitHub Pages compatibility
+- Uses React Router v6 with `BrowserRouter` for clean URLs
 - Routes defined in `src/App.jsx`
-- Hash-based URLs (e.g., `/#/skills`)
+- Clean URLs (e.g., `/skills`) with GitHub Pages compatibility via `404.html` redirect
 
 ## Adding New Features
 
