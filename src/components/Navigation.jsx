@@ -22,6 +22,7 @@ function Navigation({ isDarkMode, onThemeToggle }) {
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/portfolio/data-engineering', label: 'Data Engineering', indent: true },
     { path: '/blog', label: 'Blog' },
+    { path: '/contact', label: 'Contact' },
   ]
 
   const NavLink = ({ to, children, indent = false, onClick }) => (
@@ -58,6 +59,7 @@ function Navigation({ isDarkMode, onThemeToggle }) {
               <NavLink to="/skills">Skills</NavLink>
               <NavLink to="/portfolio">Portfolio</NavLink>
               <NavLink to="/blog">Blog</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
             </div>
           </div>
 
