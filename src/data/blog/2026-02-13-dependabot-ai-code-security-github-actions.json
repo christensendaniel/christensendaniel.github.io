@@ -1,9 +1,9 @@
 {
-  "id": "2025-10-11-dependabot-ai-code-security-github-actions",
+  "id": "2026-02-13-dependabot-ai-code-security-github-actions",
   "title": "Keeping AI Code Secure: Automated Dependency Updates with Dependabot",
   "author": "Daniel Christensen",
-  "date": "October 11, 2025",
-  "dateISO": "2025-10-11",
+  "date": "February 13, 2026",
+  "dateISO": "2026-02-13",
   "description": "Configure Dependabot to automatically update AI/ML dependencies and integrate security checks into your GitHub Actions workflow.",
   "tags": ["Security", "GitHub Actions", "Dependabot", "AI", "DevOps"],
   "excerpt": "How to configure Dependabot to automatically update AI/ML dependencies and integrate security checks into your GitHub Actions workflow for safer, more maintainable LLM applications.",
