@@ -279,6 +279,73 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 >
                   <a
                     class="hover:text-primary transition-colors"
+                    href="/blog/2025-09-06-training-llm-part-1-motivation-and-architecture"
+                  >
+                    Training My Own LLM Part 1: Why I Did It and What I Was Getting Into
+                  </a>
+                </h3>
+                <p
+                  class="text-sm text-muted-foreground mt-2"
+                >
+                  September 6, 2025
+                </p>
+              </div>
+              <div
+                class="p-6 pt-0 space-y-4"
+              >
+                <p
+                  class="text-muted-foreground"
+                >
+                  The motivation behind training a custom large language model from scratch, the architectural decisions that shaped the project, and the honest reality of working within consumer hardware constraints.
+                </p>
+                <div
+                  class="flex flex-wrap gap-2"
+                >
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  >
+                    LLM
+                  </span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  >
+                    Machine Learning
+                  </span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  >
+                    GPT-2
+                  </span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  >
+                    Deep Learning
+                  </span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                  >
+                    AI
+                  </span>
+                </div>
+                <a
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  href="/blog/2025-09-06-training-llm-part-1-motivation-and-architecture"
+                >
+                  Read More →
+                </a>
+              </div>
+            </div>
+            <div
+              class="rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <div
+                class="flex flex-col space-y-1.5 p-6"
+              >
+                <h3
+                  class="font-semibold tracking-tight text-2xl"
+                >
+                  <a
+                    class="hover:text-primary transition-colors"
                     href="/blog/2025-08-31-hello-world"
                   >
                     Hello World: Building Scalable Data Pipelines
