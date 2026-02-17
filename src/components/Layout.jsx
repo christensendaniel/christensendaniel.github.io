@@ -26,10 +26,18 @@ function Layout({ children, showNavigation = true }) {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Skip navigation link - only visible on keyboard focus */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+      >
+        Skip to main content
+      </a>
+      
       {showNavigation && (
         <Navigation isDarkMode={isDarkMode} onThemeToggle={handleThemeToggle} />
       )}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {children}
       </main>
       <Footer />

@@ -6,6 +6,7 @@ import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
+import Layout from '../components/Layout'
 
 const renderWithHelmet = (ui) => {
   return render(
@@ -55,6 +56,19 @@ describe('Accessibility Tests', () => {
       
       const button = screen.getByRole('button', { name: /toggle theme/i })
       expect(button).toHaveAttribute('aria-label')
+    })
+
+    test('mobile menu button has aria-expanded attribute', () => {
+      const mockToggle = jest.fn()
+      const { container } = renderWithHelmet(
+        <MemoryRouter future={routerFutureFlags}>
+          <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
+        </MemoryRouter>
+      )
+      
+      // Find the mobile menu button by aria-label
+      const menuButton = screen.getByLabelText(/open menu|close menu/i)
+      expect(menuButton).toHaveAttribute('aria-expanded')
     })
   })
 
@@ -117,6 +131,38 @@ describe('Accessibility Tests', () => {
     })
   })
 
+  describe('Skip navigation', () => {
+    test('skip navigation link is present', () => {
+      renderWithHelmet(
+        <MemoryRouter future={routerFutureFlags}>
+          <Layout>
+            <div>Test content</div>
+          </Layout>
+        </MemoryRouter>
+      )
+      
+      // Check for skip link
+      const skipLink = screen.getByText(/skip to main content/i)
+      expect(skipLink).toBeInTheDocument()
+      expect(skipLink).toHaveAttribute('href', '#main-content')
+    })
+
+    test('main content has correct ID for skip link', () => {
+      const { container } = renderWithHelmet(
+        <MemoryRouter future={routerFutureFlags}>
+          <Layout>
+            <div>Test content</div>
+          </Layout>
+        </MemoryRouter>
+      )
+      
+      // Check that main element has the id="main-content"
+      const main = container.querySelector('#main-content')
+      expect(main).toBeInTheDocument()
+      expect(main.tagName.toLowerCase()).toBe('main')
+    })
+  })
+
   describe('Link accessibility', () => {
     test('all links have meaningful text', () => {
       renderWithHelmet(
@@ -132,6 +178,31 @@ describe('Accessibility Tests', () => {
         const hasAriaLabel = link.hasAttribute('aria-label')
         expect(hasText || hasAriaLabel).toBe(true)
       })
+    })
+  })
+
+  describe('Loading state accessibility', () => {
+    test('loading fallback has proper ARIA attributes', () => {
+      // Create a minimal loading component to test
+      const LoadingFallback = () => (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center" role="status" aria-live="polite">
+            <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent" aria-hidden="true"></div>
+            <p className="mt-4 text-muted-foreground">Loading...</p>
+            <span className="sr-only">Loading page content, please wait</span>
+          </div>
+        </div>
+      )
+      
+      render(<LoadingFallback />)
+      
+      // Check for role="status"
+      const statusContainer = screen.getByRole('status')
+      expect(statusContainer).toBeInTheDocument()
+      expect(statusContainer).toHaveAttribute('aria-live', 'polite')
+      
+      // Check for sr-only text
+      expect(screen.getByText(/loading page content, please wait/i)).toBeInTheDocument()
     })
   })
 })

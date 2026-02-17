@@ -67,7 +67,12 @@ function Navigation({ isDarkMode, onThemeToggle }) {
             {/* Mobile Navigation */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={isOpen}
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>

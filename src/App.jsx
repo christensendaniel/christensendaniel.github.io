@@ -15,9 +15,10 @@ const Sitemap = lazy(() => import('./pages/Sitemap'))
 // Loading fallback component
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
-    <div className="text-center">
-      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent"></div>
+    <div className="text-center" role="status" aria-live="polite">
+      <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent" aria-hidden="true"></div>
       <p className="mt-4 text-muted-foreground">Loading...</p>
+      <span className="sr-only">Loading page content, please wait</span>
     </div>
   </div>
 )
