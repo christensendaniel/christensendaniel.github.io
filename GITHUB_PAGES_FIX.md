@@ -146,6 +146,5 @@ The deployment was fixed by:
 1. ✅ Ensuring workflow builds (`npm run build`) before deploy
 2. ✅ Using official GitHub Actions deployment method
 3. ✅ Automatic GitHub Pages configuration (no manual steps needed)
-4. ⚠️ **REQUIRES MANUAL**: Configuring GitHub Pages to deploy from `gh-pages` branch
 
-Once GitHub Pages settings are updated to use the `gh-pages` branch, the site will serve the compiled build files and render correctly.
+Once the workflow runs, GitHub Pages automatically configures itself to deploy from GitHub Actions, serving the compiled build files.

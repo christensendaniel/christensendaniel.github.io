@@ -200,7 +200,7 @@ jobs:
     needs: build-and-verify
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
-    # Set deployment environment for GitHub Pages
+    # Configure deployment environment and URL
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
