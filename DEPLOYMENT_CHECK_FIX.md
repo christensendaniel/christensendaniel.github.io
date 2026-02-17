@@ -1,5 +1,10 @@
 # Deployment Check Fix Documentation
 
+> **Note**: After this PR was created, the main branch implemented the core fix by deleting `copilot-setup-steps.yml` and adding build verification steps. This PR has been merged with main and adds additional improvements:
+> - Retry logic with exponential backoff in the deployment check script
+> - Extended GitHub Pages propagation wait time (60s vs 30s)
+> - Comprehensive documentation of the issue and resolution
+
 ## Problem
 
 The deployment verification workflow (`copilot-setup-steps.yml`) was failing with the error:
@@ -37,9 +42,28 @@ After thorough investigation, we discovered that:
 
 ## Solution Implemented
 
-### 1. Remove Race Condition
+The fix was implemented across two efforts:
 
-**File**: `.github/workflows/copilot-setup-steps.yml`
+### Main Branch Changes (PR #15)
+
+The main branch independently implemented the core fix:
+
+1. **Deleted `copilot-setup-steps.yml`** - Removed the workflow that was causing the race condition
+2. **Added build verification step** - Added comprehensive checks to ensure the build output contains only production files:
+   ```yaml
+   - name: Verify no source files in build
+     run: |
+       # Checks for src/ directory, package.json, vite.config.js
+       # Verifies index.html doesn't reference src/main.jsx
+       # Confirms compiled bundles are present
+   ```
+3. **Added `force_orphan: true`** - Ensures clean GitHub Pages deployments
+
+### This PR's Additional Improvements
+
+### 1. Remove Race Condition (Now Completed in Main)
+
+**File**: `.github/workflows/copilot-setup-steps.yml` - **DELETED**
 
 Removed the `push` trigger that caused the workflow to run on every commit to main:
 
