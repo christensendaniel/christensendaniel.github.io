@@ -1,14 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import SEO, { StructuredData } from '../components/SEO'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
 
 function DataEngineeringPortfolio() {
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://christensendaniel.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://christensendaniel.com/portfolio/" },
+      { "@type": "ListItem", "position": 3, "name": "Data Engineering", "item": "https://christensendaniel.com/portfolio/data-engineering/" }
+    ]
+  }
+
   return (
     <Layout>
+      <SEO
+        title="Data Engineering Portfolio - Enterprise Projects"
+        description="Detailed case studies of enterprise-scale data engineering projects including real-time streaming, ETL pipelines, and cloud-native solutions."
+        canonical="/portfolio/data-engineering/"
+        keywords="data engineering projects, real-time streaming, ETL pipelines, Apache Flink, Snowflake, AWS, enterprise data solutions"
+      />
+      <StructuredData data={breadcrumbSchema} />
       {/* Hero Header */}
       <header className="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16 md:py-20">
         <div className="container mx-auto px-4">

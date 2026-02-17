@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from './constants/router'
 
 /**
@@ -16,9 +17,11 @@ export function renderWithRouter(ui, { route = '/', ...renderOptions } = {}) {
   
   function Wrapper({ children }) {
     return (
-      <BrowserRouter future={routerFutureFlags}>
-        {children}
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter future={routerFutureFlags}>
+          {children}
+        </BrowserRouter>
+      </HelmetProvider>
     )
   }
   

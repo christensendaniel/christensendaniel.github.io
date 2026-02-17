@@ -1,6 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { BrowserRouter, Routes, Route, MemoryRouter } from 'react-router-dom'
+import { Routes, Route, MemoryRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from '../constants/router'
 import BlogPost from '../pages/BlogPost'
 
@@ -13,8 +14,17 @@ const localStorageMock = {
 global.localStorage = localStorageMock
 
 describe('BlogPost component', () => {
+  const renderWithHelmet = (ui, options = {}) => {
+    return render(
+      <HelmetProvider>
+        {ui}
+      </HelmetProvider>,
+      options
+    )
+  }
+
   test('renders blog post page', () => {
-    render(
+    renderWithHelmet(
       <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
@@ -27,7 +37,7 @@ describe('BlogPost component', () => {
   })
 
   test('renders back button', () => {
-    render(
+    renderWithHelmet(
       <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
@@ -40,7 +50,7 @@ describe('BlogPost component', () => {
   })
 
   test('renders post metadata', () => {
-    render(
+    renderWithHelmet(
       <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/2025-08-31-hello-world']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />
@@ -55,7 +65,7 @@ describe('BlogPost component', () => {
   })
 
   test('handles invalid post ID', () => {
-    render(
+    renderWithHelmet(
       <MemoryRouter future={routerFutureFlags} initialEntries={['/blog/invalid-post']}>
         <Routes>
           <Route path="/blog/:postId" element={<BlogPost />} />

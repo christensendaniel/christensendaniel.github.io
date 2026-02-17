@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://christensendaniel.com/sitemap.xml
+
+# Disallow build artifacts
+Disallow: /assets/

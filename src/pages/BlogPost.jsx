@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Layout from '../components/Layout'
+import SEO, { StructuredData } from '../components/SEO'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { ArrowLeft } from 'lucide-react'
@@ -14,7 +15,9 @@ function BlogPost() {
       title: 'Hello World: Building Scalable Data Pipelines',
       author: 'Daniel B. Christensen',
       date: 'August 31, 2025',
+      dateISO: '2025-08-31',
       tags: ['data-engineering', 'pipelines', 'snowflake', 'apache-flink'],
+      excerpt: 'An introduction to my blog and insights on building enterprise-scale data pipelines at Disney and beyond.',
       content: `
         <p>Welcome to my technical blog! I'm Daniel B. Christensen, a Senior Data Engineer at The Walt Disney Company, and I'm excited to share insights from my journey building data infrastructure at scale.</p>
         
@@ -84,8 +87,47 @@ function BlogPost() {
     )
   }
 
+  // Article structured data
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "datePublished": post.dateISO,
+    "url": `https://christensendaniel.com/blog/${postId}/`
+  }
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://christensendaniel.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://christensendaniel.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://christensendaniel.com/blog/${postId}/` }
+    ]
+  }
+
   return (
     <Layout>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${postId}/`}
+        type="article"
+        keywords={post.tags.join(', ')}
+        article={{
+          publishedTime: post.dateISO,
+          author: post.author,
+          tags: post.tags
+        }}
+      />
+      <StructuredData data={articleSchema} />
+      <StructuredData data={breadcrumbSchema} />
       <article className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Button variant="ghost" asChild className="mb-8">

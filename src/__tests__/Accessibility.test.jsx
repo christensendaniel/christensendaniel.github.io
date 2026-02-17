@@ -1,16 +1,25 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { routerFutureFlags } from '../constants/router'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
 
+const renderWithHelmet = (ui) => {
+  return render(
+    <HelmetProvider>
+      {ui}
+    </HelmetProvider>
+  )
+}
+
 describe('Accessibility Tests', () => {
   describe('Navigation accessibility', () => {
     test('navigation has proper semantic HTML', () => {
       const mockToggle = jest.fn()
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
@@ -23,7 +32,7 @@ describe('Accessibility Tests', () => {
 
     test('navigation links have proper labels', () => {
       const mockToggle = jest.fn()
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
@@ -38,7 +47,7 @@ describe('Accessibility Tests', () => {
 
     test('theme toggle has accessible label', () => {
       const mockToggle = jest.fn()
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
@@ -68,7 +77,7 @@ describe('Accessibility Tests', () => {
 
   describe('Page accessibility', () => {
     test('home page has main heading', () => {
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
@@ -80,7 +89,7 @@ describe('Accessibility Tests', () => {
     })
 
     test('home page has proper heading hierarchy', () => {
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
@@ -93,7 +102,7 @@ describe('Accessibility Tests', () => {
 
     test('interactive elements are keyboard accessible', () => {
       const mockToggle = jest.fn()
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Navigation isDarkMode={false} onThemeToggle={mockToggle} />
         </BrowserRouter>
@@ -110,7 +119,7 @@ describe('Accessibility Tests', () => {
 
   describe('Link accessibility', () => {
     test('all links have meaningful text', () => {
-      render(
+      renderWithHelmet(
         <BrowserRouter future={routerFutureFlags}>
           <Home />
         </BrowserRouter>
