@@ -6,7 +6,7 @@ function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground" data-testid="copyright-text">
-            © 2025 Daniel Christensen
+            © {new Date().getFullYear()} Daniel Christensen
           </p>
           <a 
             href="https://github.com/christensendaniel/christensendaniel.github.io" 
