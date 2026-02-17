@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Layout from '../components/Layout'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
@@ -448,7 +449,7 @@ function Home() {
                   </li>
                 </ul>
                 <Button asChild variant="link" className="p-0 h-auto">
-                  <a href="portfolio/data-engineering-portfolio.html">View Portfolio →</a>
+                  <Link to="/portfolio/data-engineering">View Portfolio →</Link>
                 </Button>
               </CardContent>
             </Card>

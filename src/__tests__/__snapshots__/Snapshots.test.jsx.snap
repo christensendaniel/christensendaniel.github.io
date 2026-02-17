@@ -59,6 +59,13 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-portfolio"
+                href="/portfolio/data-engineering"
+              >
+                Portfolio
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
                 data-testid="nav-link-blog"
                 href="/blog"
               >
@@ -308,6 +315,13 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 href="/#projects"
               >
                 Projects
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-portfolio"
+                href="/portfolio/data-engineering"
+              >
+                Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
@@ -1556,7 +1570,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
-                  href="portfolio/data-engineering-portfolio.html"
+                  href="/portfolio/data-engineering"
                 >
                   View Portfolio →
                 </a>
@@ -2805,6 +2819,13 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
                 href="/#projects"
               >
                 Projects
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-testid="nav-link-portfolio"
+                href="/portfolio/data-engineering"
+              >
+                Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
