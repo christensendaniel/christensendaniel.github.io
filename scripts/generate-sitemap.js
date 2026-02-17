@@ -20,6 +20,7 @@ const staticPages = [
 
 // Blog posts with their priorities and change frequencies
 const blogPosts = [
+  { path: '/blog/2026-02-17-why-i-use-uv-python-dependencies/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2026-02-17-building-portfolio-site-ai-github-pages/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2026-02-13-dependabot-ai-code-security-github-actions/', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions/', priority: '0.8', changefreq: 'monthly' },
