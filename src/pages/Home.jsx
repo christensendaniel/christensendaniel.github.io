@@ -387,7 +387,7 @@ function Home() {
                   </li>
                 </ul>
                 <Button asChild variant="link" className="p-0 h-auto">
-                  <a href="portfolio/data-engineering-portfolio.html">View Public Projects →</a>
+                  <Link to="/portfolio/data-engineering">View Public Projects →</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -420,7 +420,7 @@ function Home() {
                   </li>
                 </ul>
                 <Button asChild variant="link" className="p-0 h-auto">
-                  <a href="portfolio/data-engineering-portfolio.html">View Case Study →</a>
+                  <Link to="/portfolio/data-engineering">View Case Study →</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -449,7 +449,7 @@ function Home() {
                   </li>
                 </ul>
                 <Button asChild variant="link" className="p-0 h-auto">
-                  <a href="blog/index.html">Read Blog →</a>
+                  <Link to="/blog">Read Blog →</Link>
                 </Button>
               </CardContent>
             </Card>
