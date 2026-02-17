@@ -52,6 +52,31 @@ function Sitemap() {
       description: "How I used GitHub Pages, automated deployments, and AI-assisted development to transform a static HTML site into a modern React portfolio"
     },
     {
+      title: "Training My Own LLM Part 5: Evaluation, Deployment, and Honest Conclusions",
+      path: "/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions",
+      description: "How the model actually performed, what a local deployment looked like, and the honest verdict on whether training your own LLM from scratch is worth it"
+    },
+    {
+      title: "Training My Own LLM Part 4: The Actual Training Experience",
+      path: "/blog/2025-09-27-training-llm-part-4-the-training-experience",
+      description: "What 70 hours of GPU training actually looks like — the failures, the recoveries, and what the loss curves revealed"
+    },
+    {
+      title: "Training My Own LLM Part 3: Implementation and the Training Loop",
+      path: "/blog/2025-09-20-training-llm-part-3-implementation-and-training-loop",
+      description: "The actual model configuration, memory arithmetic that dictated every decision, and the checkpoint strategy earned through repeated failures"
+    },
+    {
+      title: "Training My Own LLM Part 2: Dataset Engineering at Scale",
+      path: "/blog/2025-09-13-training-llm-part-2-dataset-engineering",
+      description: "How I prepared 8.2 million training examples from OpenWebText and what tokenization looks like at scale"
+    },
+    {
+      title: "Training My Own LLM Part 1: Why I Did It and What I Was Getting Into",
+      path: "/blog/2025-09-06-training-llm-part-1-motivation-and-architecture",
+      description: "The motivation behind training a custom large language model from scratch and the architectural decisions that shaped the project"
+    },
+    {
       title: "Hello World: Building Scalable Data Pipelines",
       path: "/blog/2025-08-31-hello-world",
       description: "An introduction to building enterprise-scale data pipelines at Disney and beyond"

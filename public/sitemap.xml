@@ -36,6 +36,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://christensendaniel.com/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christensendaniel.com/blog/2025-09-27-training-llm-part-4-the-training-experience/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christensendaniel.com/blog/2025-09-20-training-llm-part-3-implementation-and-training-loop/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://christensendaniel.com/blog/2025-09-13-training-llm-part-2-dataset-engineering/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://christensendaniel.com/blog/2025-09-06-training-llm-part-1-motivation-and-architecture/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
