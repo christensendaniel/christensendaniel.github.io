@@ -507,7 +507,7 @@ function Home() {
                   </li>
                 </ul>
                 <Button asChild variant="link" className="p-0 h-auto">
-                  <a href="skills.html">View Skills →</a>
+                  <Link to="/skills">View Skills →</Link>
                 </Button>
               </CardContent>
             </Card>

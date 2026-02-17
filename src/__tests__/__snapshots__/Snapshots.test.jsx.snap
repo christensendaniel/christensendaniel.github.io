@@ -1415,7 +1415,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
-                  href="portfolio/data-engineering-portfolio.html"
+                  href="/portfolio/data-engineering"
                 >
                   View Public Projects →
                 </a>
@@ -1500,7 +1500,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
-                  href="portfolio/data-engineering-portfolio.html"
+                  href="/portfolio/data-engineering"
                 >
                   View Case Study →
                 </a>
@@ -1573,7 +1573,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
-                  href="blog/index.html"
+                  href="/blog"
                 >
                   Read Blog →
                 </a>
@@ -1719,7 +1719,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
-                  href="skills.html"
+                  href="/skills"
                 >
                   View Skills →
                 </a>
@@ -2283,531 +2283,1055 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
   <div
     class="min-h-screen flex flex-col"
   >
+    <nav
+      class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      data-testid="main-navigation"
+    >
+      <div
+        class="container mx-auto px-4"
+      >
+        <div
+          class="flex h-16 items-center justify-between"
+        >
+          <div
+            class="flex items-center gap-6"
+          >
+            <a
+              class="font-semibold text-lg hover:text-primary transition-colors"
+              data-testid="nav-logo"
+              href="/"
+            >
+              Daniel Christensen
+            </a>
+            <div
+              class="hidden md:flex items-center gap-1"
+              data-testid="nav-links"
+            >
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                href="/"
+              >
+                Home
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/skills"
+              >
+                Skills
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/portfolio"
+              >
+                Portfolio
+              </a>
+              <a
+                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                href="/blog"
+              >
+                Blog
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-2"
+          >
+            <button
+              aria-label="Toggle theme"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"
+              data-testid="theme-toggle"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-sun h-5 w-5"
+                data-testid="sun-icon"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                />
+                <path
+                  d="M12 2v2"
+                />
+                <path
+                  d="M12 20v2"
+                />
+                <path
+                  d="m4.93 4.93 1.41 1.41"
+                />
+                <path
+                  d="m17.66 17.66 1.41 1.41"
+                />
+                <path
+                  d="M2 12h2"
+                />
+                <path
+                  d="M20 12h2"
+                />
+                <path
+                  d="m6.34 17.66-1.41 1.41"
+                />
+                <path
+                  d="m19.07 4.93-1.41 1.41"
+                />
+              </svg>
+            </button>
+            <button
+              aria-controls="radix-:r9:"
+              aria-expanded="false"
+              aria-haspopup="dialog"
+              aria-label="Open menu"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden"
+              data-state="closed"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-menu h-5 w-5"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 5h16"
+                />
+                <path
+                  d="M4 12h16"
+                />
+                <path
+                  d="M4 19h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main
       class="flex-1"
     >
       <header
-        class="portfolio-header"
+        class="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16 md:py-20"
       >
         <div
-          class="container"
+          class="container mx-auto px-4"
         >
-          <h1
-            class="portfolio-title"
+          <a
+            class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 mb-6 flex items-center gap-2"
+            href="/"
           >
-            Data Engineering Portfolio
-          </h1>
-          <p
-            class="portfolio-subtitle"
-          >
-            Case Studies & Technical Achievements
-          </p>
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-arrow-left h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m12 19-7-7 7-7"
+              />
+              <path
+                d="M19 12H5"
+              />
+            </svg>
+            Back to Home
+          </a>
           <div
-            class="portfolio-meta"
+            class="max-w-4xl"
           >
-            <span>
-              7+ Years Experience
-            </span>
-            <span>
-              •
-            </span>
-            <span>
-              Enterprise Scale Solutions
-            </span>
-            <span>
-              •
-            </span>
-            <span>
-              Proven Results
-            </span>
+            <h1
+              class="text-4xl md:text-5xl font-bold mb-4"
+            >
+              Data Engineering Portfolio
+            </h1>
+            <p
+              class="text-xl md:text-2xl text-muted-foreground mb-6"
+            >
+              Case Studies & Technical Achievements
+            </p>
+            <div
+              class="flex flex-wrap items-center gap-4 text-sm md:text-base text-muted-foreground"
+            >
+              <span>
+                7+ Years Experience
+              </span>
+              <span>
+                •
+              </span>
+              <span>
+                Enterprise Scale Solutions
+              </span>
+              <span>
+                •
+              </span>
+              <span>
+                Proven Results
+              </span>
+            </div>
           </div>
         </div>
       </header>
-      <nav
-        class="main-nav"
-      >
-        <div
-          class="container"
+      <main>
+        <section
+          class="py-12 md:py-16"
         >
-          <ul
-            class="nav-list"
-          >
-            <li>
-              <a
-                class="nav-link"
-                href="/"
-              >
-                ← Back to Home
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                href="#case-studies"
-              >
-                Case Studies
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                href="#technical"
-              >
-                Technical Deep Dives
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                href="#open-source"
-              >
-                Open Source
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link"
-                href="#skills"
-              >
-                Skills & Tech
-              </a>
-            </li>
-          </ul>
-          <button
-            aria-label="Toggle dark mode"
-            class="theme-toggle"
-            id="theme-toggle"
-          >
-            <span
-              class="theme-toggle-icon"
-            >
-              🌙
-            </span>
-          </button>
-        </div>
-      </nav>
-      <section
-        class="section"
-        id="summary"
-      >
-        <div
-          class="container"
-        >
-          <h2
-            class="section-title"
-          >
-            Summary
-          </h2>
-          <p>
-            I specialize in designing robust data pipelines, real-time streaming architectures, and full-stack analytics solutions. My work spans data ingestion, modeling, orchestration, cloud deployment, and visualization—delivering end-to-end systems that power business intelligence and ML workflows.
-          </p>
-        </div>
-      </section>
-      <section
-        class="section"
-        id="case-studies"
-      >
-        <div
-          class="container"
-        >
-          <h2
-            class="section-title"
-          >
-            Case Studies & Technical Achievements
-          </h2>
           <div
-            class="case-studies-grid"
+            class="container mx-auto px-4"
           >
             <div
-              class="case-study-card highlight"
+              class="max-w-4xl mx-auto"
             >
-              <div
-                class="case-study-icon"
+              <h2
+                class="text-3xl font-bold mb-6"
               >
-                🚀
-              </div>
-              <h3>
-                High-Performance Event Processing at Disney
-              </h3>
-              <ul>
-                <li>
-                  <strong>
-                    Challenge:
-                  </strong>
-                   Slow query performance on event-based data impacting downstream analytics
-                </li>
-                <li>
-                  <strong>
-                    Solution:
-                  </strong>
-                   Redesigning data models and optimizing Snowflake queries
-                </li>
-                <li>
-                  <strong>
-                    Impact:
-                  </strong>
-                   30% performance improvement, significant cost reduction
-                </li>
-                <li>
-                  <strong>
-                    Technologies:
-                  </strong>
-                   Snowflake, Python, Apache Airflow, SQL
-                </li>
-              </ul>
-            </div>
-            <div
-              class="case-study-card"
-            >
-              <div
-                class="case-study-icon"
+                Summary
+              </h2>
+              <p
+                class="text-lg text-muted-foreground leading-relaxed"
               >
-                📊
-              </div>
-              <h3>
-                Real-Time Reporting Infrastructure
-              </h3>
-              <ul>
-                <li>
-                  <strong>
-                    Challenge:
-                  </strong>
-                   Business needed near real-time visibility into operational metrics
-                </li>
-                <li>
-                  <strong>
-                    Solution:
-                  </strong>
-                   Built event-driven pipeline with streaming architecture
-                </li>
-                <li>
-                  <strong>
-                    Impact:
-                  </strong>
-                   Sub-2-minute data latency from source to dashboard
-                </li>
-                <li>
-                  <strong>
-                    Technologies:
-                  </strong>
-                   Apache Kafka, Python, PostgreSQL, Metabase
-                </li>
-              </ul>
-            </div>
-            <div
-              class="case-study-card"
-            >
-              <div
-                class="case-study-icon"
-              >
-                🔄
-              </div>
-              <h3>
-                Multi-Source Data Integration Platform
-              </h3>
-              <ul>
-                <li>
-                  <strong>
-                    Challenge:
-                  </strong>
-                   Manual reporting consuming 200+ hours monthly across marketing channels
-                </li>
-                <li>
-                  <strong>
-                    Solution:
-                  </strong>
-                   Built FastAPI platform integrating FB, Google Ads, AdRoll APIs
-                </li>
-                <li>
-                  <strong>
-                    Impact:
-                  </strong>
-                   Fully automated reporting, 2M+ requests/month capacity
-                </li>
-                <li>
-                  <strong>
-                    Technologies:
-                  </strong>
-                   FastAPI, Azure, Python, REST APIs, Docker
-                </li>
-              </ul>
-            </div>
-            <div
-              class="case-study-card"
-            >
-              <div
-                class="case-study-icon"
-              >
-                💼
-              </div>
-              <h3>
-                Enterprise Data Synchronization
-              </h3>
-              <ul>
-                <li>
-                  <strong>
-                    Challenge:
-                  </strong>
-                   Sync millions of rows between MS Dynamics and POS systems
-                </li>
-                <li>
-                  <strong>
-                    Solution:
-                  </strong>
-                   Designed robust ETL pipeline with error handling and monitoring
-                </li>
-                <li>
-                  <strong>
-                    Impact:
-                  </strong>
-                   5M+ rows synced monthly with 99.9% reliability
-                </li>
-                <li>
-                  <strong>
-                    Technologies:
-                  </strong>
-                   SQL Server, Python, Airflow, Azure
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        class="section section-alt"
-        id="technical"
-      >
-        <div
-          class="container"
-        >
-          <h2
-            class="section-title"
-          >
-            Technical Deep Dives
-          </h2>
-          <ul>
-            <li>
-              <strong>
-                Pipeline Architecture Patterns:
-              </strong>
-               
-              <em>
-                Coming soon
-              </em>
-            </li>
-            <li>
-              <strong>
-                Cost Optimization Strategies:
-              </strong>
-               
-              <em>
-                Coming soon
-              </em>
-            </li>
-            <li>
-              <strong>
-                Data Quality Framework:
-              </strong>
-               
-              <em>
-                Coming soon
-              </em>
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section
-        class="section"
-        id="open-source"
-      >
-        <div
-          class="container"
-        >
-          <h2
-            class="section-title"
-          >
-            Open Source Contributions
-          </h2>
-          <div
-            class="open-source-card"
-          >
-            <div
-              class="os-header"
-            >
-              <h3>
-                📦 paged-list
-              </h3>
-              <div
-                class="os-badges"
-              >
-                <span
-                  class="badge badge-pypi"
-                >
-                  PyPI Package
-                </span>
-                <span
-                  class="badge badge-python"
-                >
-                  Python 3.6+
-                </span>
-              </div>
-            </div>
-            <div
-              class="os-content"
-            >
-              <p>
-                <strong>
-                  Description:
-                </strong>
-                 Python package for efficient static pagination and listing functionality
-              </p>
-              <p>
-                <strong>
-                  Usage:
-                </strong>
-                 
-                <code>
-                  pip install paged-list
-                </code>
-              </p>
-              <div
-                class="os-links"
-              >
-                <a
-                  class="btn btn-primary"
-                  href="https://pypi.org/project/paged-list/"
-                >
-                  View on PyPI
-                </a>
-                <a
-                  class="btn btn-secondary"
-                  href="https://github.com/christensendaniel/paged-list"
-                >
-                  GitHub Repository
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        class="section section-alt"
-        id="skills"
-      >
-        <div
-          class="container"
-        >
-          <h2
-            class="section-title"
-          >
-            Skills & Technologies
-          </h2>
-          <div
-            class="skills-matrix"
-          >
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Core Competencies
-              </h3>
-              <p>
-                Full-Stack Data Engineering | Batch & Streaming Pipelines | Data Integration | Data Modeling | Real-Time Analytics | API Development | BI Dashboards
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Languages & Frameworks
-              </h3>
-              <p>
-                Python, SQL, Java, Bash, R | FastAPI, Flask, Django | dbt
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Data Pipelines & Orchestration
-              </h3>
-              <p>
-                Apache Airflow | Apache Flink (real-time streaming) | Custom ETL/ELT pipelines in Python
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Data Formats
-              </h3>
-              <p>
-                Parquet, Avro, ORC, JSON
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Streaming & Messaging
-              </h3>
-              <p>
-                Kafka, AWS SQS, Azure Event Hubs, AWS Kinesis
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                APIs & Integrations
-              </h3>
-              <p>
-                Built custom connectors for Facebook Ads, Google Ads, HubSpot, Keap, ClickFunnels, AdRoll, Wicked Reports, LiveIntent | Implemented OAuth 2.0 flows for secure integrations
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Visualization & BI Tools
-              </h3>
-              <p>
-                Metabase, Tableau, Looker, Power BI, Domo | Matplotlib, Plotly, Dash | Built custom dashboards for analytics & monitoring
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Cloud Platforms
-              </h3>
-              <p>
-                AWS (Lambda, S3, ECS, Fargate, ECR, EC2, Kinesis) | Azure (App Service, AKS, Event Hubs, Azure ML) | Kubernetes, Docker
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                CI/CD & DevOps
-              </h3>
-              <p>
-                GitHub Actions, Azure DevOps | Automated deployments for microservices & pipelines
-              </p>
-            </div>
-            <div
-              class="skill-category"
-            >
-              <h3>
-                Monitoring & Observability
-              </h3>
-              <p>
-                DataDog, CloudWatch | Custom alerting and observability dashboards
+                I specialize in designing robust data pipelines, real-time streaming architectures, and full-stack analytics solutions. My work spans data ingestion, modeling, orchestration, cloud deployment, and visualization—delivering end-to-end systems that power business intelligence and ML workflows.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <section
+          class="py-12 md:py-16 bg-muted/50"
+          id="case-studies"
+        >
+          <div
+            class="container mx-auto px-4"
+          >
+            <h2
+              class="text-3xl font-bold mb-12 text-center"
+            >
+              Case Studies & Technical Achievements
+            </h2>
+            <div
+              class="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto"
+            >
+              <div
+                class="rounded-lg bg-card text-card-foreground shadow-sm border-primary border-2 md:col-span-2"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <div
+                    class="flex items-start gap-4"
+                  >
+                    <div
+                      class="text-4xl"
+                    >
+                      🚀
+                    </div>
+                    <div
+                      class="flex-1"
+                    >
+                      <h3
+                        class="font-semibold tracking-tight text-xl md:text-2xl mb-2"
+                      >
+                        High-Performance Event Processing at Disney
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 pt-0 space-y-3"
+                >
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      CHALLENGE:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Slow query performance on event-based data impacting downstream analytics
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      SOLUTION:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Redesigning data models and optimizing Snowflake queries
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      IMPACT:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      30% performance improvement, significant cost reduction
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      TECHNOLOGIES:
+                    </strong>
+                    <div
+                      class="flex flex-wrap gap-2 mt-2"
+                    >
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Snowflake
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Python
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Apache Airflow
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        SQL
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <div
+                    class="flex items-start gap-4"
+                  >
+                    <div
+                      class="text-4xl"
+                    >
+                      📊
+                    </div>
+                    <div
+                      class="flex-1"
+                    >
+                      <h3
+                        class="font-semibold tracking-tight text-xl mb-2"
+                      >
+                        Real-Time Reporting Infrastructure
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 pt-0 space-y-3"
+                >
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      CHALLENGE:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Business needed near real-time visibility into operational metrics
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      SOLUTION:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Built event-driven pipeline with streaming architecture
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      IMPACT:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Sub-2-minute data latency from source to dashboard
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      TECHNOLOGIES:
+                    </strong>
+                    <div
+                      class="flex flex-wrap gap-2 mt-2"
+                    >
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Apache Kafka
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Python
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        PostgreSQL
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Metabase
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <div
+                    class="flex items-start gap-4"
+                  >
+                    <div
+                      class="text-4xl"
+                    >
+                      🔄
+                    </div>
+                    <div
+                      class="flex-1"
+                    >
+                      <h3
+                        class="font-semibold tracking-tight text-xl mb-2"
+                      >
+                        Multi-Source Data Integration Platform
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 pt-0 space-y-3"
+                >
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      CHALLENGE:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Manual reporting consuming 200+ hours monthly across marketing channels
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      SOLUTION:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Built FastAPI platform integrating FB, Google Ads, AdRoll APIs
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      IMPACT:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Fully automated reporting, 2M+ requests/month capacity
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      TECHNOLOGIES:
+                    </strong>
+                    <div
+                      class="flex flex-wrap gap-2 mt-2"
+                    >
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        FastAPI
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Azure
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Python
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        REST APIs
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Docker
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <div
+                    class="flex items-start gap-4"
+                  >
+                    <div
+                      class="text-4xl"
+                    >
+                      💼
+                    </div>
+                    <div
+                      class="flex-1"
+                    >
+                      <h3
+                        class="font-semibold tracking-tight text-xl mb-2"
+                      >
+                        Enterprise Data Synchronization
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 pt-0 space-y-3"
+                >
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      CHALLENGE:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Sync millions of rows between MS Dynamics and POS systems
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      SOLUTION:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Designed robust ETL pipeline with error handling and monitoring
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      IMPACT:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      5M+ rows synced monthly with 99.9% reliability
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-sm font-semibold text-primary"
+                    >
+                      TECHNOLOGIES:
+                    </strong>
+                    <div
+                      class="flex flex-wrap gap-2 mt-2"
+                    >
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        SQL Server
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Python
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Airflow
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Azure
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-12 md:py-16"
+          id="technical"
+        >
+          <div
+            class="container mx-auto px-4"
+          >
+            <h2
+              class="text-3xl font-bold mb-12 text-center"
+            >
+              Technical Deep Dives
+            </h2>
+            <div
+              class="max-w-4xl mx-auto"
+            >
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="p-6 pt-6"
+                >
+                  <ul
+                    class="space-y-3 text-muted-foreground"
+                  >
+                    <li
+                      class="flex items-baseline gap-2"
+                    >
+                      <strong
+                        class="text-foreground"
+                      >
+                        Pipeline Architecture Patterns:
+                      </strong>
+                      <em>
+                        Coming soon
+                      </em>
+                    </li>
+                    <li
+                      class="flex items-baseline gap-2"
+                    >
+                      <strong
+                        class="text-foreground"
+                      >
+                        Cost Optimization Strategies:
+                      </strong>
+                      <em>
+                        Coming soon
+                      </em>
+                    </li>
+                    <li
+                      class="flex items-baseline gap-2"
+                    >
+                      <strong
+                        class="text-foreground"
+                      >
+                        Data Quality Framework:
+                      </strong>
+                      <em>
+                        Coming soon
+                      </em>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-12 md:py-16 bg-muted/50"
+          id="open-source"
+        >
+          <div
+            class="container mx-auto px-4"
+          >
+            <h2
+              class="text-3xl font-bold mb-12 text-center"
+            >
+              Open Source Contributions
+            </h2>
+            <div
+              class="max-w-4xl mx-auto"
+            >
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                  >
+                    <h3
+                      class="font-semibold tracking-tight text-2xl flex items-center gap-2"
+                    >
+                      📦 paged-list
+                    </h3>
+                    <div
+                      class="flex flex-wrap gap-2"
+                    >
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
+                      >
+                        PyPI Package
+                      </div>
+                      <div
+                        class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                      >
+                        Python 3.6+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="p-6 pt-0 space-y-4"
+                >
+                  <div>
+                    <strong
+                      class="text-foreground"
+                    >
+                      Description:
+                    </strong>
+                    <p
+                      class="text-muted-foreground"
+                    >
+                      Python package for efficient static pagination and listing functionality
+                    </p>
+                  </div>
+                  <div>
+                    <strong
+                      class="text-foreground"
+                    >
+                      Usage:
+                    </strong>
+                    <code
+                      class="block mt-2 bg-muted px-4 py-2 rounded text-sm"
+                    >
+                      pip install paged-list
+                    </code>
+                  </div>
+                  <div
+                    class="flex flex-wrap gap-3 pt-2"
+                  >
+                    <a
+                      class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 flex items-center gap-2"
+                      href="https://pypi.org/project/paged-list/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-external-link h-4 w-4"
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 3h6v6"
+                        />
+                        <path
+                          d="M10 14 21 3"
+                        />
+                        <path
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        />
+                      </svg>
+                      View on PyPI
+                    </a>
+                    <a
+                      class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 flex items-center gap-2"
+                      href="https://github.com/christensendaniel/paged-list"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="lucide lucide-github h-4 w-4"
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                        />
+                        <path
+                          d="M9 18c-4.51 2-5-2-7-2"
+                        />
+                      </svg>
+                      GitHub Repository
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-12 md:py-16"
+          id="skills"
+        >
+          <div
+            class="container mx-auto px-4"
+          >
+            <h2
+              class="text-3xl font-bold mb-12 text-center"
+            >
+              Skills & Technologies
+            </h2>
+            <div
+              class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            >
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Core Competencies
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Full-Stack Data Engineering | Batch & Streaming Pipelines | Data Integration | Data Modeling | Real-Time Analytics | API Development | BI Dashboards
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Languages & Frameworks
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Python, SQL, Java, Bash, R | FastAPI, Flask, Django | dbt
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Data Pipelines & Orchestration
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Apache Airflow | Apache Flink (real-time streaming) | Custom ETL/ELT pipelines in Python
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Data Formats
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Parquet, Avro, ORC, JSON
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Streaming & Messaging
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Kafka, AWS SQS, Azure Event Hubs, AWS Kinesis
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    APIs & Integrations
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Built custom connectors for Facebook Ads, Google Ads, HubSpot, Keap, ClickFunnels, AdRoll, Wicked Reports, LiveIntent | Implemented OAuth 2.0 flows for secure integrations
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Visualization & BI Tools
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Metabase, Tableau, Looker, Power BI, Domo | Matplotlib, Plotly, Dash | Built custom dashboards for analytics & monitoring
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Cloud Platforms
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  AWS (Lambda, S3, ECS, Fargate, ECR, EC2, Kinesis) | Azure (App Service, AKS, Event Hubs, Azure ML) | Kubernetes, Docker
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    CI/CD & DevOps
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  GitHub Actions, Azure DevOps | Automated deployments for microservices & pipelines
+                </div>
+              </div>
+              <div
+                class="rounded-lg border bg-card text-card-foreground shadow-sm"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    Monitoring & Observability
+                  </h3>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  DataDog, CloudWatch | Custom alerting and observability dashboards
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </main>
     <footer
       class="border-t bg-background"
@@ -3497,6 +4021,139 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
         </section>
         <section
           class="py-16 md:py-24"
+          id="ai-ml"
+        >
+          <div
+            class="container mx-auto px-4"
+          >
+            <h2
+              class="text-3xl md:text-4xl font-bold text-center mb-12"
+            >
+              AI/ML & LLM Engineering
+            </h2>
+            <div
+              class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            >
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm border-primary/50 bg-primary/5"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    LLM Fine-Tuning & Training
+                  </h3>
+                  <p
+                    class="text-sm text-muted-foreground"
+                  >
+                    LoRA, QLoRA, PEFT, Hugging Face Transformers
+                  </p>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Parameter-efficient fine-tuning techniques for domain-specific LLM adaptation. Experience with Hugging Face ecosystem for model training and deployment.
+                </div>
+              </div>
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm border-primary/50 bg-primary/5"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    AI Agent Creation
+                  </h3>
+                  <p
+                    class="text-sm text-muted-foreground"
+                  >
+                    LangGraph, CrewAI, AutoGen
+                  </p>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Building autonomous AI agents with multi-step reasoning and tool use. Agent orchestration, memory management, and task decomposition.
+                </div>
+              </div>
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm border-primary/50 bg-primary/5"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    AI Implementation in Production
+                  </h3>
+                  <p
+                    class="text-sm text-muted-foreground"
+                  >
+                    Production-ready AI systems at scale
+                  </p>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Deploying and maintaining AI systems in production environments. API integration, latency optimization, and cost management for LLM applications.
+                </div>
+              </div>
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm border-primary/50 bg-primary/5"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    AI Data Analysis
+                  </h3>
+                  <p
+                    class="text-sm text-muted-foreground"
+                  >
+                    LLM-powered analytics pipelines
+                  </p>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Building automated analytics workflows powered by LLMs. Natural language to SQL, automated insight generation, and intelligent data exploration.
+                </div>
+              </div>
+              <div
+                class="rounded-lg border text-card-foreground shadow-sm border-primary/50 bg-primary/5"
+              >
+                <div
+                  class="flex flex-col space-y-1.5 p-6"
+                >
+                  <h3
+                    class="font-semibold tracking-tight text-lg"
+                  >
+                    AI Data Governance
+                  </h3>
+                  <p
+                    class="text-sm text-muted-foreground"
+                  >
+                    Model monitoring, bias detection, responsible AI
+                  </p>
+                </div>
+                <div
+                  class="p-6 pt-0 text-sm text-muted-foreground"
+                >
+                  Implementing data lineage for AI systems, model performance monitoring, bias detection, and responsible AI practices. Ensuring compliance and ethical AI deployment.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-16 md:py-24 bg-muted/50"
           id="certifications"
         >
           <div
