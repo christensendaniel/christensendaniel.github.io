@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Snapshot Tests Blog page snapshot 1`] = `
 <div>
@@ -26,6 +26,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-discover="true"
               data-testid="nav-logo"
               href="/"
             >
@@ -37,30 +38,35 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                data-discover="true"
                 href="/"
               >
                 Home
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/skills"
               >
                 Skills
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/portfolio"
               >
                 Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/contact"
               >
                 Contact
@@ -121,7 +127,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-:r6:"
+              aria-controls="radix-_r_6_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -169,6 +175,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
         >
           <a
             class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 mb-6 flex items-center gap-2"
+            data-discover="true"
             href="/"
           >
             <svg
@@ -225,6 +232,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 >
                   <a
                     class="hover:text-primary transition-colors"
+                    data-discover="true"
                     href="/blog/2026-02-17-building-portfolio-site-ai-github-pages"
                   >
                     Building a Modern Portfolio Site with AI: From Static HTML to React
@@ -275,6 +283,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 </div>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/blog/2026-02-17-building-portfolio-site-ai-github-pages"
                 >
                   Read More →
@@ -292,6 +301,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 >
                   <a
                     class="hover:text-primary transition-colors"
+                    data-discover="true"
                     href="/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions"
                   >
                     Training My Own LLM Part 5: Evaluation, Deployment, and Honest Conclusions
@@ -342,6 +352,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 </div>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/blog/2025-10-04-training-llm-part-5-evaluation-deployment-conclusions"
                 >
                   Read More →
@@ -359,6 +370,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 >
                   <a
                     class="hover:text-primary transition-colors"
+                    data-discover="true"
                     href="/blog/2025-09-06-training-llm-part-1-motivation-and-architecture"
                   >
                     Training My Own LLM Part 1: Why I Did It and What I Was Getting Into
@@ -409,6 +421,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 </div>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/blog/2025-09-06-training-llm-part-1-motivation-and-architecture"
                 >
                   Read More →
@@ -426,6 +439,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 >
                   <a
                     class="hover:text-primary transition-colors"
+                    data-discover="true"
                     href="/blog/2025-08-31-hello-world"
                   >
                     Hello World: Building Scalable Data Pipelines
@@ -471,6 +485,7 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
                 </div>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/blog/2025-08-31-hello-world"
                 >
                   Read More →
@@ -555,6 +570,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-discover="true"
               data-testid="nav-logo"
               href="/"
             >
@@ -566,30 +582,35 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                data-discover="true"
                 href="/"
               >
                 Home
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/skills"
               >
                 Skills
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/portfolio"
               >
                 Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/contact"
               >
                 Contact
@@ -650,7 +671,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-:r0:"
+              aria-controls="radix-_r_0_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -744,6 +765,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
+                data-discover="true"
                 href="/portfolio"
               >
                 View Projects
@@ -1660,6 +1682,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/portfolio/data-engineering"
                 >
                   View Public Projects →
@@ -1745,6 +1768,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/portfolio/data-engineering"
                 >
                   View Case Study →
@@ -1818,6 +1842,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/blog"
                 >
                   Read Blog →
@@ -1891,6 +1916,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/portfolio/data-engineering"
                 >
                   View Portfolio →
@@ -1964,6 +1990,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
                 </ul>
                 <a
                   class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline p-0 h-auto"
+                  data-discover="true"
                   href="/skills"
                 >
                   View Skills →
@@ -2567,6 +2594,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-discover="true"
               data-testid="nav-logo"
               href="/"
             >
@@ -2578,30 +2606,35 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                data-discover="true"
                 href="/"
               >
                 Home
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/skills"
               >
                 Skills
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/portfolio"
               >
                 Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/contact"
               >
                 Contact
@@ -2662,7 +2695,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-:r9:"
+              aria-controls="radix-_r_9_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -2710,6 +2743,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
         >
           <a
             class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 mb-6 flex items-center gap-2"
+            data-discover="true"
             href="/"
           >
             <svg
@@ -3627,6 +3661,7 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
           >
             <a
               class="font-semibold text-lg hover:text-primary transition-colors"
+              data-discover="true"
               data-testid="nav-logo"
               href="/"
             >
@@ -3638,30 +3673,35 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
             >
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                data-discover="true"
                 href="/"
               >
                 Home
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/skills"
               >
                 Skills
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/portfolio"
               >
                 Portfolio
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/blog"
               >
                 Blog
               </a>
               <a
                 class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3"
+                data-discover="true"
                 href="/contact"
               >
                 Contact
@@ -3722,7 +3762,7 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-:r3:"
+              aria-controls="radix-_r_3_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -3770,6 +3810,7 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
         >
           <a
             class="justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 mb-6 flex items-center gap-2"
+            data-discover="true"
             href="/"
           >
             <svg
