@@ -201,12 +201,12 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
             Back to Home
           </a>
           <h1
-            class="text-4xl md:text-5xl font-bold mb-4"
+            class="text-4xl md:text-5xl font-bold mb-4 text-center"
           >
             Technical Blog
           </h1>
           <p
-            class="text-xl text-muted-foreground"
+            class="text-xl text-muted-foreground text-center"
           >
             Data Engineering Insights & Best Practices
           </p>
@@ -2769,7 +2769,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
             Back to Home
           </a>
           <div
-            class="max-w-4xl"
+            class="max-w-4xl mx-auto text-center"
           >
             <h1
               class="text-4xl md:text-5xl font-bold mb-4"
@@ -2782,7 +2782,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
               Case Studies & Technical Achievements
             </p>
             <div
-              class="flex flex-wrap items-center gap-4 text-sm md:text-base text-muted-foreground"
+              class="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base text-muted-foreground"
             >
               <span>
                 7+ Years Experience
@@ -3836,12 +3836,12 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
             Back to Home
           </a>
           <h1
-            class="text-4xl md:text-5xl font-bold mb-4"
+            class="text-4xl md:text-5xl font-bold mb-4 text-center"
           >
             Technical Skills & Expertise
           </h1>
           <p
-            class="text-xl text-muted-foreground"
+            class="text-xl text-muted-foreground text-center"
           >
             Full-stack data engineering capabilities across modern technologies and platforms
           </p>

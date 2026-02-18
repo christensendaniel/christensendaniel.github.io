@@ -34,8 +34,8 @@ function Skills() {
               Back to Home
             </Link>
           </Button>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Technical Skills & Expertise</h1>
-          <p className="text-xl text-muted-foreground">Full-stack data engineering capabilities across modern technologies and platforms</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Technical Skills & Expertise</h1>
+          <p className="text-xl text-muted-foreground text-center">Full-stack data engineering capabilities across modern technologies and platforms</p>
         </div>
       </header>
 

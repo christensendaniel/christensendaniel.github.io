@@ -36,10 +36,10 @@ function Portfolio() {
               Back to Home
             </Link>
           </Button>
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Data Engineering Portfolio</h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-6">Case Studies & Technical Achievements</p>
-            <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm md:text-base text-muted-foreground">
               <span>7+ Years Experience</span>
               <span>•</span>
               <span>Enterprise Scale Solutions</span>

@@ -38,8 +38,8 @@ function Blog() {
               Back to Home
             </Link>
           </Button>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Technical Blog</h1>
-          <p className="text-xl text-muted-foreground">Data Engineering Insights & Best Practices</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">Technical Blog</h1>
+          <p className="text-xl text-muted-foreground text-center">Data Engineering Insights & Best Practices</p>
         </div>
       </header>
 
