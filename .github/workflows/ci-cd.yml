@@ -48,7 +48,7 @@ jobs:
           echo "✅ Coverage thresholds met"
       
       - name: Upload coverage artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: coverage-report
@@ -188,7 +188,7 @@ jobs:
           echo "✅ Build output verified - contains only production files"
       
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: build-artifacts
           path: dist/
@@ -207,7 +207,7 @@ jobs:
     
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: build-artifacts
           path: dist/
@@ -260,7 +260,7 @@ jobs:
       
       - name: Upload console logs
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: console-logs
           path: test-results/console-*.txt
@@ -268,7 +268,7 @@ jobs:
       
       - name: Upload error screenshots
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: error-screenshots
           path: test-results/screenshots/
@@ -289,7 +289,7 @@ jobs:
         continue-on-error: true
       
       - name: Upload screenshots (legacy)
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: deployment-screenshots
