@@ -167,6 +167,11 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
       class="flex-1"
       id="main-content"
     >
+      <script
+        type="application/ld+json"
+      >
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://christensendaniel.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://christensendaniel.com/blog/"}]}
+      </script>
       <header
         class="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-12 md:py-16"
       >
@@ -711,6 +716,11 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
       class="flex-1"
       id="main-content"
     >
+      <script
+        type="application/ld+json"
+      >
+        {"@context":"https://schema.org","@type":"Person","name":"Daniel Christensen","url":"https://christensendaniel.com","jobTitle":"Full Stack Data Engineer","worksFor":{"@type":"Organization","name":"The Walt Disney Company"},"knowsAbout":["Data Engineering","LLM Integration","AI Agents","Python","Snowflake","AWS","Apache Kafka","dbt","Apache Flink","Real-time Analytics","ETL","Streaming Data"],"sameAs":["https://github.com/christensendaniel"]}
+      </script>
       <header
         class="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-20 md:py-32"
       >
@@ -2735,6 +2745,11 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
       class="flex-1"
       id="main-content"
     >
+      <script
+        type="application/ld+json"
+      >
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://christensendaniel.com/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://christensendaniel.com/portfolio/"}]}
+      </script>
       <header
         class="relative bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16 md:py-20"
       >
@@ -3802,6 +3817,11 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
       class="flex-1"
       id="main-content"
     >
+      <script
+        type="application/ld+json"
+      >
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://christensendaniel.com/"},{"@type":"ListItem","position":2,"name":"Skills","item":"https://christensendaniel.com/skills/"}]}
+      </script>
       <header
         class="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-12 md:py-16"
       >
