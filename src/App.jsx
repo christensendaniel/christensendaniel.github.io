@@ -40,6 +40,7 @@ function App() {
           <Route path="/sitemap" element={<Sitemap />} />
           {/* Redirect old URL to new React route */}
           <Route path="/portfolio/data-engineering-portfolio.html" element={<Navigate to="/portfolio/data-engineering" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
     </Router>

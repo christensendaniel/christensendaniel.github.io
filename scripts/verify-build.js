@@ -8,6 +8,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { staticPages, getBlogPostPages } from './lib/site-routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -173,6 +174,26 @@ if (fs.existsSync(cnameSourcePath)) {
   } else {
     console.log('   ⚠️  CNAME file NOT in dist (may need to copy manually or configure build)');
   }
+}
+
+// Check 8: Verify every route has its own page so direct loads return 200
+console.log('\n✓ Check 8: Verifying per-route pages...');
+const expectedRoutes = [
+  ...staticPages,
+  ...getBlogPostPages(path.join(rootDir, 'src/data/blog')),
+].map(page => page.path).filter(routePath => routePath !== '/');
+
+const missingRoutes = expectedRoutes.filter(routePath => {
+  const routeIndex = path.join(distDir, ...routePath.split('/').filter(Boolean), 'index.html');
+  return !fs.existsSync(routeIndex) || !fs.readFileSync(routeIndex, 'utf8').includes('id="root"');
+});
+
+if (missingRoutes.length > 0) {
+  console.error('❌ ERROR: Missing route pages (direct loads would return 404):');
+  missingRoutes.forEach(routePath => console.error(`   - ${routePath}`));
+  hasErrors = true;
+} else {
+  console.log(`✅ All ${expectedRoutes.length} route pages found`);
 }
 
 // Final summary

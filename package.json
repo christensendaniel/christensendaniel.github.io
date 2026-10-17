@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/generate-sitemap.js",
-    "build": "vite build && node scripts/generate-version.js",
+    "build": "vite build && node scripts/generate-route-pages.js && node scripts/generate-version.js",
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
