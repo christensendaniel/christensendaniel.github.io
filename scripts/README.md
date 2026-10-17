@@ -20,6 +20,20 @@ node scripts/generate-version.js
 
 **Auto-run:** This script runs automatically after `npm run build`
 
+### `generate-route-pages.js`
+Gives every route its own page so direct loads of inner pages return 200 instead of falling back to `404.html` on GitHub Pages.
+
+**Usage:**
+```bash
+node scripts/generate-route-pages.js
+```
+
+**Output:** Copies `dist/index.html` to `dist/<route>/index.html` for each route in `scripts/lib/site-routes.js` (static pages plus one per post in `src/data/blog/`).
+
+**Adding a page:** Add the route to `src/App.jsx` and to `staticPages` in `scripts/lib/site-routes.js`. Blog posts are picked up automatically. Unknown paths still fall back to `public/404.html`, which `src/utils/spaRedirect.js` restores.
+
+**Auto-run:** This script runs automatically after `vite build` in `npm run build`
+
 ### `vite-plugin-deployment-meta.js`
 Vite plugin that injects deployment metadata into the HTML build.
 
@@ -47,6 +61,7 @@ npm run verify-build
 - Configuration files are correct
 - CNAME file is copied
 - version.json exists
+- Every route has its own page in dist
 
 ### `verify-deployment.js`
 Verifies the deployed site is accessible.
@@ -106,6 +121,7 @@ node scripts/generate-pr-comment.js
 
 | Script | When to Use | Auto-run |
 |--------|-------------|----------|
+| `generate-route-pages.js` | After build | ✅ Yes (via npm run build) |
 | `generate-version.js` | After build | ✅ Yes (via npm run build) |
 | `vite-plugin-deployment-meta.js` | During build | ✅ Yes (via Vite plugin) |
 | `verify-build.js` | Before deployment | ✅ Yes (in CI/CD) |
