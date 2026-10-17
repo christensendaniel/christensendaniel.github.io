@@ -127,7 +127,6 @@ exports[`Snapshot Tests Blog page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-_r_6_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -676,7 +675,6 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-_r_0_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -2385,7 +2383,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="lucide lucide-linkedin h-4 w-4"
+                class="h-4 w-4"
                 fill="none"
                 height="24"
                 stroke="currentColor"
@@ -2421,7 +2419,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="lucide lucide-github h-4 w-4"
+                class="h-4 w-4"
                 fill="none"
                 height="24"
                 stroke="currentColor"
@@ -2705,7 +2703,6 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-_r_9_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"
@@ -3371,7 +3368,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="lucide lucide-github h-4 w-4"
+                        class="h-4 w-4"
                         fill="none"
                         height="24"
                         stroke="currentColor"
@@ -3777,7 +3774,6 @@ exports[`Snapshot Tests Skills page snapshot 1`] = `
               </svg>
             </button>
             <button
-              aria-controls="radix-_r_3_"
               aria-expanded="false"
               aria-haspopup="dialog"
               aria-label="Open menu"

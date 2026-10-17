@@ -5,7 +5,8 @@ import SEO, { StructuredData } from '../components/SEO'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
-import { ArrowLeft, ExternalLink, Github } from 'lucide-react'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { Github } from '../components/ui/brand-icons'
 
 function Portfolio() {
   // Breadcrumb structured data
