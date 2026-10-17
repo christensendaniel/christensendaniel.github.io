@@ -2383,7 +2383,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="lucide lucide-linkedin h-4 w-4"
+                class="h-4 w-4"
                 fill="none"
                 height="24"
                 stroke="currentColor"
@@ -2419,7 +2419,7 @@ exports[`Snapshot Tests Home page snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="lucide lucide-github h-4 w-4"
+                class="h-4 w-4"
                 fill="none"
                 height="24"
                 stroke="currentColor"
@@ -3368,7 +3368,7 @@ exports[`Snapshot Tests Portfolio page snapshot 1`] = `
                     >
                       <svg
                         aria-hidden="true"
-                        class="lucide lucide-github h-4 w-4"
+                        class="h-4 w-4"
                         fill="none"
                         height="24"
                         stroke="currentColor"

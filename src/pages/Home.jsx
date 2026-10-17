@@ -4,7 +4,8 @@ import Layout from '../components/Layout'
 import SEO, { StructuredData } from '../components/SEO'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
-import { Mail, Linkedin, Github, Package, FileText } from 'lucide-react'
+import { Mail, Package, FileText } from 'lucide-react'
+import { Linkedin, Github } from '../components/ui/brand-icons'
 
 function Home() {
   // Structured data for the person schema

@@ -4,7 +4,8 @@ import Layout from '../components/Layout';
 import SEO, { StructuredData } from '../components/SEO';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { ArrowLeft, Linkedin, Mail, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Mail, MessageSquare } from 'lucide-react';
+import { Linkedin } from '../components/ui/brand-icons';
 
 function Contact() {
   // Breadcrumb structured data
